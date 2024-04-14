@@ -19,6 +19,11 @@ export const GlobalStyle = createGlobalStyle`
       .logo{
         color: var(--black);
       }
+      
+      .svg-icon {
+        filter: invert(100%); /* Inverts white to black */
+      }
+    
 
       header.header-fixed{
         transition: 0.5s;
@@ -115,4 +120,9 @@ export const GlobalStyle = createGlobalStyle`
     //   color: var(--green);
     // }
   }
+  .svg-icon {
+    fill: #fff;  /* White fill */
+    stroke: #fff;  /* White stroke */
+  }
+
 `

@@ -39,7 +39,6 @@ export const Container = styled.section`
     }
   }
 
-
   .button{
     margin-top: 5rem;
     padding: 1.4rem 6rem;
@@ -51,6 +50,20 @@ export const Container = styled.section`
     }
   }
 
+  .svg-icon path {
+    stroke: #FFFFFF;
+    stroke-width: 1;
+    stroke-dasharray: 1000;  // Length of the path
+    stroke-dashoffset: 1000;  // Initially equal to the path length
+    animation: draw 5s forwards;  // Adjust the timing as needed
+  }
+  
+  @keyframes draw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  
 
   @media(max-width: 960px){
     display: block;
