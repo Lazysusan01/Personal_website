@@ -1,4 +1,4 @@
-# Portfolio of Vinayak Singh
+# Portfolio of Nico McGill
 
 <img src ="https://github.com/Lazysusan01/Personal_website/blob/master/Screenshot%202024-04-13%20174346.png />
  
