@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.section`
-  padding-top: 15%;
+  padding-top: 10%;
   display: flex;
   justify-content: space-between;
   gap: 8rem;
@@ -45,17 +45,32 @@ export const Container = styled.section`
   }
 
   .hero-image{
-    img{
-      max-width: 500px;
-    }
+    text-align: right;
+   img{
+     margin-top: 2rem;
+     width: 50%;
+     border-radius: 50rem;
+     transition: filter 0.5s;
+     &:hover{
+       filter: grayscale(0);
+     }
+   }
   }
 
-  .svg-icon path {
-    stroke: #FFFFFF;
-    stroke-width: 1;
-    stroke-dasharray: 1000;  // Length of the path
-    stroke-dashoffset: 1000;  // Initially equal to the path length
-    animation: draw 5s forwards;  // Adjust the timing as needed
+  .animated-svg {
+    .svg-icon path {
+      stroke: #FFFFFF;
+      stroke-width: 1;
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 1000;
+      animation: none;
+    }
+  
+    &.animate {
+      .svg-icon path {
+        animation: draw 5s forwards;
+      }
+    }
   }
   
   @keyframes draw {
@@ -63,13 +78,11 @@ export const Container = styled.section`
       stroke-dashoffset: 0;
     }
   }
-  
 
-  @media(max-width: 960px){
+  @media(max-width: 1080px){
     display: block;
     margin-top: 15%;
     .hero-text{
-
       h1{
         font-size: 5rem;
       }

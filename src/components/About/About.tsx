@@ -1,5 +1,4 @@
 import { Container } from "./styles";
-import nicomcgill from "../../assets/nicomcgill.png";
 import wordpress from "../../assets/wordpress.svg";
 import shopify from "../../assets/shopify.svg";
 import htmlIcon from "../../assets/html-icon.svg";
@@ -12,6 +11,7 @@ import microsoft_azure from "../../assets/Microsoft_Azure.svg";
 import aws from "../../assets/Amazon_Web_Services_Logo.svg";
 import boostrapIcon from "../../assets/bootstrap-icon.svg";
 import ScrollAnimation from "react-animate-on-scroll";
+import illustration from "../../assets/illustration.svg";
 
 export function About() {
   return (
@@ -30,8 +30,7 @@ export function About() {
             I'm proficient in modern development tools and have built a wide range of software products, from full stack websites, to chrome extensions, internal tools and anything inbetween.</p>
         </ScrollAnimation>
         <ScrollAnimation animateIn="fadeInLeft" delay={0.3 * 1000}>
-          <p>
-            So if you're in need of a new website or just looking to revamp your current online presence, I'd love to chat and see how I can help.</p>
+          <p>My resume is above if you're a recruiter or if looking to hire me for freelance work please contact me below</p>
         </ScrollAnimation>
         <ScrollAnimation animateIn="fadeInLeft" delay={0.4 * 1000}>
           <h3>Here are my main skills:</h3>
@@ -96,7 +95,7 @@ export function About() {
       </div>
       <div className="about-image">
         <ScrollAnimation animateIn="fadeInRight" delay={0.20 * 1000}>
-          <img src={nicomcgill} alt="Nico McGill"/>
+          <img src={illustration} alt="Nico McGill"/>
         </ScrollAnimation>
       </div>
     </Container>

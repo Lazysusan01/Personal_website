@@ -1,0 +1,1702 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codebase>
+  <file path="/Users/nicom/Documents/Portfolio-v2/src\App.tsx" name="App.tsx">
+    <content>import React from &apos;react&apos;
+// import { useEffect } from &apos;react&apos;
+import { Footer } from &apos;./components/Footer/Footer&apos;
+import { Header } from &apos;./components/Header/Header&apos;
+import { Main } from &apos;./components/Main/Main&apos;
+import { GlobalStyle } from &apos;./styles/global&apos;
+import &apos;react-toastify/dist/ReactToastify.css&apos;
+function App() {
+  return (
+    &lt;&gt;
+      &lt;GlobalStyle&gt;&lt;/GlobalStyle&gt;
+      &lt;Header&gt;&lt;/Header&gt;
+      &lt;Main&gt;&lt;/Main&gt;
+      &lt;Footer&gt;&lt;/Footer&gt;
+    &lt;/&gt;
+  )
+}
+
+export default App
+</content>
+  </file>
+  <file path="/Users/nicom/Documents/Portfolio-v2/src\index.tsx" name="index.tsx">
+    <content>import React from &apos;react&apos;
+import ReactDOM from &apos;react-dom&apos;
+import App from &apos;./App&apos;
+
+ReactDOM.render(
+  &lt;React.StrictMode&gt;
+    &lt;App /&gt;
+  &lt;/React.StrictMode&gt;,
+  document.getElementById(&apos;root&apos;)
+)</content>
+  </file>
+  <file path="/Users/nicom/Documents/Portfolio-v2/src\@types\image.d.ts" name="image.d.ts">
+    <content>declare module &apos;*.svg&apos;;
+declare module &apos;*.pdf&apos;;
+declare module &apos;*.png&apos;;
+declare module &apos;*.jpg&apos;;
+declare module &apos;*.gif&apos;;
+declare module &apos;*.webp&apos;;</content>
+  </file>
+  <file path="/Users/nicom/Documents/Portfolio-v2/src\components\About\About.tsx" name="About.tsx">
+    <content>import { Container } from &quot;./styles&quot;;
+import nicomcgill from &quot;../../assets/nicomcgill.png&quot;;
+import wordpress from &quot;../../assets/wordpress.svg&quot;;
+import shopify from &quot;../../assets/shopify.svg&quot;;
+import htmlIcon from &quot;../../assets/html-icon.svg&quot;;
+import cssIcon from &quot;../../assets/css-icon.svg&quot;;
+import jsIcon from &quot;../../assets/js-icon.svg&quot;;
+import nodeIcon from &quot;../../assets/node-icon.svg&quot;;
+import reactIcon from &quot;../../assets/react-icon.svg&quot;;
+import typescriptIcon from &quot;../../assets/typescript-icon.svg&quot;;
+import microsoft_azure from &quot;../../assets/Microsoft_Azure.svg&quot;;
+import aws from &quot;../../assets/Amazon_Web_Services_Logo.svg&quot;;
+import boostrapIcon from &quot;../../assets/bootstrap-icon.svg&quot;;
+import ScrollAnimation from &quot;react-animate-on-scroll&quot;;
+
+export function About() {
+  return (
+    &lt;Container id=&quot;about&quot;&gt;
+      &lt;div className=&quot;about-text&quot;&gt;
+        &lt;ScrollAnimation animateIn=&quot;fadeInLeft&quot;&gt;
+          &lt;h2&gt;About me&lt;/h2&gt;
+        &lt;/ScrollAnimation&gt;
+        &lt;ScrollAnimation animateIn=&quot;fadeInLeft&quot; delay={0.1 * 1000}&gt;
+          &lt;p&gt;
+            Hi there! I&apos;m Nico, a full stack developer with a passion for building with software.
+          &lt;/p&gt;
+        &lt;/ScrollAnimation&gt;
+        &lt;ScrollAnimation animateIn=&quot;fadeInLeft&quot; delay={0.2 * 1000} style={{ marginTop: &quot;2rem&quot;, marginBottom: &quot;2rem&quot; }}&gt;
+          &lt;p&gt;
+            I&apos;m proficient in modern development tools and have built a wide range of software products, from full stack websites, to chrome extensions, internal tools and anything inbetween.&lt;/p&gt;
+        &lt;/ScrollAnimation&gt;
+        &lt;ScrollAnimation animateIn=&quot;fadeInLeft&quot; delay={0.3 * 1000}&gt;
+          &lt;p&gt;
+            So if you&apos;re in need of a new website or just looking to revamp your current online presence, I&apos;d love to chat and see how I can help.&lt;/p&gt;
+        &lt;/ScrollAnimation&gt;
+        &lt;ScrollAnimation animateIn=&quot;fadeInLeft&quot; delay={0.4 * 1000}&gt;
+          &lt;h3&gt;Here are my main skills:&lt;/h3&gt;
+        &lt;/ScrollAnimation&gt;
+        &lt;div className=&quot;hard-skills&quot;&gt;
+          &lt;div className=&quot;hability&quot;&gt;
+            &lt;ScrollAnimation animateIn=&quot;fadeInUp&quot; delay={0.10 * 1000}&gt;
+              &lt;img src={wordpress} alt=&quot;Wordpress&quot; /&gt;
+            &lt;/ScrollAnimation&gt;
+          &lt;/div&gt;
+          &lt;div className=&quot;hability&quot;&gt;
+            &lt;ScrollAnimation animateIn=&quot;fadeInUp&quot; delay={0.12 * 1000}&gt;
+              &lt;img src={shopify} alt=&quot;shopify&quot; /&gt;
+            &lt;/ScrollAnimation&gt;
+          &lt;/div&gt;
+          &lt;div className=&quot;hability&quot;&gt;
+            &lt;ScrollAnimation animateIn=&quot;fadeInUp&quot; delay={0.13 * 1000}&gt;
+              &lt;img src={reactIcon} alt=&quot;React&quot; /&gt;
+            &lt;/ScrollAnimation&gt;
+          &lt;/div&gt;
+          &lt;div className=&quot;hability&quot;&gt;
+            &lt;ScrollAnimation animateIn=&quot;fadeInUp&quot; delay={0.14 * 1000}&gt;
+              &lt;img src={typescriptIcon} alt=&quot;Typescript&quot; /&gt;
+            &lt;/ScrollAnimation&gt;
+          &lt;/div&gt;
+          &lt;div className=&quot;hability&quot;&gt;
+            &lt;ScrollAnimation animateIn=&quot;fadeInUp&quot; delay={0.15 * 1000}&gt;
+              &lt;img src={aws} alt=&quot;Vue&quot; /&gt;
+            &lt;/ScrollAnimation&gt;
+          &lt;/div&gt;
+          &lt;div className=&quot;hability&quot;&gt;
+            &lt;ScrollAnimation animateIn=&quot;fadeInUp&quot; delay={0.15 * 1000}&gt;
+              &lt;img src={microsoft_azure} alt=&quot;Vue&quot; /&gt;
+            &lt;/ScrollAnimation&gt;
+          &lt;/div&gt;
+          &lt;div className=&quot;hability&quot;&gt;
+            &lt;ScrollAnimation animateIn=&quot;fadeInUp&quot; delay={0.16 * 1000}&gt;
+              &lt;img src={nodeIcon} alt=&quot;Node&quot; /&gt;
+            &lt;/ScrollAnimation&gt;
+          &lt;/div&gt;
+          &lt;div className=&quot;hability&quot;&gt;
+            &lt;ScrollAnimation animateIn=&quot;fadeInUp&quot; delay={0.17 * 1000}&gt;
+              &lt;img src={htmlIcon} alt=&quot;Html&quot; /&gt;
+            &lt;/ScrollAnimation&gt;
+          &lt;/div&gt;
+          &lt;div className=&quot;hability&quot;&gt;
+            &lt;ScrollAnimation animateIn=&quot;fadeInUp&quot; delay={0.18 * 1000}&gt;
+              &lt;img src={cssIcon} alt=&quot;Css&quot; /&gt;
+            &lt;/ScrollAnimation&gt;
+          &lt;/div&gt;
+          &lt;div className=&quot;hability&quot;&gt;
+            &lt;ScrollAnimation animateIn=&quot;fadeInUp&quot; delay={0.19 * 1000}&gt;
+              &lt;img src={boostrapIcon} alt=&quot;bootstrap&quot; /&gt;
+            &lt;/ScrollAnimation&gt;
+          &lt;/div&gt;
+          &lt;div className=&quot;hability&quot;&gt;
+            &lt;ScrollAnimation animateIn=&quot;fadeInUp&quot; delay={0.19 * 1000}&gt;
+              &lt;img src={jsIcon} alt=&quot;JavaScript&quot; /&gt;
+            &lt;/ScrollAnimation&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div className=&quot;about-image&quot;&gt;
+        &lt;ScrollAnimation animateIn=&quot;fadeInRight&quot; delay={0.20 * 1000}&gt;
+          &lt;img src={nicomcgill} alt=&quot;Nico McGill&quot;/&gt;
+        &lt;/ScrollAnimation&gt;
+      &lt;/div&gt;
+    &lt;/Container&gt;
+  )
+}
+</content>
+  </file>
+  <file path="/Users/nicom/Documents/Portfolio-v2/src\components\About\styles.ts" name="styles.ts">
+    <content>import styled from &quot;styled-components&quot;;
+
+export const Container = styled.section`
+  margin-top: 12rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+
+  .hard-skills{
+    margin-top: 1.6rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.8rem;
+  }
+  .hability{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img{
+      width: 3.4rem;
+    }
+  }
+
+  h2{
+    display: inline-block;
+    margin-bottom: 2rem;
+    // border-bottom: 0.2rem solid var(--blue);
+    font-size :3rem;
+    margin-top: 0rem;
+    color: var(--green);
+  }
+
+  h3{
+    margin-top: 2rem;
+    color: var(--green);
+  }
+
+  p{
+    font-size: 1.8rem;
+    letter-spacing: 0.1rem;
+    font-weight: 500;
+  }
+  
+  
+
+  .about-image{
+    text-align: center;
+   img{
+     margin-top: 2rem;
+     width: 75%;
+     filter: grayscale(0);
+     border-radius: 50rem;
+     transition: filter 0.5s;
+     &amp;:hover{
+       filter: grayscale(0);
+     }
+   }
+  }
+
+  @media only screen and (max-width: 480px) {
+    .about-image {
+      max-width: 100%;
+      margin-top: 4rem;
+      img{
+        margin-top: 2rem;
+        width: 100%;
+        filter: grayscale(0);
+        transition: filter 0.5s;
+        &amp;:hover{
+          filter: grayscale(0);
+        }
+    }
+  }
+
+  @media (max-width: 960px){
+    display: block;
+    text-align: center;
+    
+    .hard-skills{
+      justify-content: center;
+    }
+    .about-image{
+      display: flex;
+      max-width: 100%;
+      img{
+        margin-top: 2rem;
+        width: 100%;
+        filter: grayscale(0);
+        transition: filter 0.5s;
+        &amp;:hover{
+          filter: grayscale(0);
+        }
+    }
+    
+    
+  }
+
+`</content>
+  </file>
+  <file path="/Users/nicom/Documents/Portfolio-v2/src\components\Contact\Contact.tsx" name="Contact.tsx">
+    <content>import { Container } from &quot;./styles&quot;;
+import emailIcon from &quot;../../assets/email-icon.svg&quot;;
+import phoneIcon from &quot;../../assets/phone-icon.svg&quot;
+import { Form } from &quot;../Form/Form&quot;;
+
+
+export function Contact(){
+
+  return(
+    &lt;Container id=&quot;contact&quot;&gt;
+      &lt;header&gt;
+        &lt;h2&gt;Contact&lt;/h2&gt;
+        &lt;p&gt;Ready to get started on your project?&lt;/p&gt;
+        &lt;p&gt;Contact me now for a Free consultation.&lt;/p&gt;
+      &lt;/header&gt;
+      &lt;div className=&quot;contacts&quot;&gt;
+        &lt;div&gt;
+        &lt;a href=&quot;mailto:nicomcgill@gmail.com&quot;&gt;&lt;img src={emailIcon} alt=&quot;Email&quot; /&gt;&lt;/a&gt; 
+          &lt;a href=&quot;mailto:nicomcgill@gmail.com&quot;&gt;nicomcgill@gmail.com&lt;/a&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;Form&gt;&lt;/Form&gt;
+    &lt;/Container&gt;
+  )
+}</content>
+  </file>
+  <file path="/Users/nicom/Documents/Portfolio-v2/src\components\Contact\styles.ts" name="styles.ts">
+    <content>import styled from &quot;styled-components&quot;;
+
+
+export const Container = styled.section`
+  margin-top: 10rem;
+
+  header{
+    text-align: center;
+    h2{
+      text-align: center;
+      font-size: 4rem;
+    }
+    p{
+      color: var(--green);
+      font-weight: 500;
+    }
+  }
+
+  .contacts{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    place-items: center;
+    margin-top: 1.5rem;
+    div{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50%;
+      max-width: 30rem;
+      gap: 2rem;
+      background-color: var(--green);
+      border-radius: 1.4rem;
+      padding: 1.6rem 2.8rem;
+      transition: background-color 0.25s;
+      img{
+        width: 4rem;
+      }
+      a{
+        color: var(--black);
+        font-weight: 500;
+      }
+      &amp;:hover{
+        background-color: var(--pink);
+        a{
+          color: #FFF;
+        }
+      }
+    }
+  }
+
+
+  @media(max-width: 960px){
+    .contacts{
+      flex-direction: column;
+      div{
+        width: 100%;
+        
+      }
+    }
+  }
+  
+`
+/* old one - 2/1/2023 - 
+@media(max-width: 960px){
+    .contacts{
+      flex-direction: column;
+      div{
+        width: 100%;
+        flex-direction: column;
+      }
+    }
+
+*/
+</content>
+  </file>
+  <file path="/Users/nicom/Documents/Portfolio-v2/src\components\Footer\Footer.tsx" name="Footer.tsx">
+    <content>import { Container } from &apos;./styles&apos;
+import reactIcon from &apos;../../assets/react-icon.svg&apos;
+import linkedin from &apos;../../assets/linkedin.svg&apos;
+import githubIcon from &apos;../../assets/github.svg&apos;
+import whatsapp from &apos;../../assets/whatsapp.svg&apos;
+import telegram from &apos;../../assets/telegram.svg&apos;
+import instagramIcon from &apos;../../assets/instagram.svg&apos;
+// import discordIcon from &apos;../../assets/discord.png&apos;
+
+export function Footer() {
+  return (
+    &lt;Container className=&quot;footer&quot;&gt;
+      &lt;div&gt;
+        &lt;p&gt;
+          This Website was made with &lt;img src={reactIcon} alt=&quot;React&quot; /&gt;
+          {/* &lt;span&gt;❤️&lt;/span&gt; */}
+        &lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div className=&quot;social-media&quot;&gt;
+        &lt;a
+          href=&quot;https://www.linkedin.com/in/nico-mcgill/&quot;
+          target=&quot;_blank&quot;
+          rel=&quot;noreferrer&quot;
+        &gt;
+          &lt;img src={linkedin} alt=&quot;Linkedin&quot; /&gt;
+        &lt;/a&gt;
+        &lt;a
+          href=&quot;https://github.com/lazysusan01/&quot;
+          target=&quot;_blank&quot;
+          rel=&quot;noreferrer&quot;
+        &gt;
+          &lt;img src={githubIcon} alt=&quot;GitHub&quot; /&gt;
+        &lt;/a&gt;
+        &lt;a
+          href=&quot;https://api.whatsapp.com/send/?phone=%2B447842739863&amp;text=Hello+Nico&quot;
+          target=&quot;_blank&quot;
+          rel=&quot;noreferrer&quot;
+        &gt;
+          &lt;img src={whatsapp} alt=&quot;Whatsapp&quot; /&gt;
+        &lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/Container&gt;
+  )
+}
+</content>
+  </file>
+  <file path="/Users/nicom/Documents/Portfolio-v2/src\components\Footer\styles.ts" name="styles.ts">
+    <content>import styled from &quot;styled-components&quot;;
+
+
+export const Container = styled.footer`
+  background-color: #2b2b2b;
+  padding: 3rem 15rem;
+  margin-top: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+
+  .logo{
+    font-size: 2.8rem;
+  }
+
+  p{
+    letter-spacing: 0.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    img{
+      width: 2.6rem;
+      animation: spinning 5s infinite linear;
+    }
+  }
+  .social-media{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+
+    img,span{
+      font-size: 3rem;
+      width: 3rem;
+    }
+  }
+
+
+  @keyframes spinning {
+    0%{
+      transform: rotate(0);
+    }
+    100%{
+      transform: rotate(360deg);
+    }
+  }
+
+  @media(max-width: 800px){
+    padding: 4rem 10rem;
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+  }
+  @media(max-width: 600px){
+    padding: 4rem 1rem;
+    p{
+      font-size: 1.2rem;
+    }
+  }
+`</content>
+  </file>
+  <file path="/Users/nicom/Documents/Portfolio-v2/src\components\Form\Form.tsx" name="Form.tsx">
+    <content>import { Container, ContainerSucces } from &apos;./styles&apos;
+import { useForm, ValidationError } from &apos;@formspree/react&apos;
+import { toast, ToastContainer } from &apos;react-toastify&apos;
+import ReCAPTCHA from &apos;react-google-recaptcha&apos;
+import { useEffect, useState } from &apos;react&apos;
+import validator from &apos;validator&apos;
+
+export function Form() {
+  const [state, handleSubmit] = useForm(&apos;xknkpqry&apos;)
+  const [validEmail, setValidEmail] = useState(false)
+  const [isHuman, setIsHuman] = useState(false)
+  const [message, setMessage] = useState(&apos;&apos;)
+  function verifyEmail(email: string) {
+    if (validator.isEmail(email)) {
+      setValidEmail(true)
+    } else {
+      setValidEmail(false)
+    }
+  }
+  useEffect(() =&gt; {
+    if (state.succeeded) {
+      toast.success(&apos;Email successfully sent!&apos;, {
+        position: toast.POSITION.BOTTOM_LEFT,
+        pauseOnFocusLoss: false,
+        closeOnClick: true,
+        hideProgressBar: false,
+        toastId: &apos;succeeded&apos;,
+      })
+    }
+  })
+  if (state.succeeded) {
+    return (
+      &lt;ContainerSucces&gt;
+        &lt;h3&gt;Thanks for getting in touch!&lt;/h3&gt;
+        &lt;button
+          onClick={() =&gt; {
+            window.scrollTo({ top: 0, behavior: &apos;smooth&apos; })
+          }}
+        &gt;
+          Back to the top
+        &lt;/button&gt;
+        &lt;ToastContainer /&gt;
+      &lt;/ContainerSucces&gt;
+    )
+  }
+  return (
+    &lt;Container&gt;
+      &lt;h2&gt;Get in touch using the form&lt;/h2&gt;
+      &lt;form onSubmit={handleSubmit}&gt;
+        &lt;input
+          placeholder=&quot;Email&quot;
+          id=&quot;email&quot;
+          type=&quot;email&quot;
+          name=&quot;email&quot;
+          onChange={(e) =&gt; {
+            verifyEmail(e.target.value)
+          }}
+          required
+        /&gt;
+        &lt;ValidationError prefix=&quot;Email&quot; field=&quot;email&quot; errors={state.errors} /&gt;
+        &lt;textarea
+          required
+          placeholder=&quot;Send a message to get started.&quot;
+          id=&quot;message&quot;
+          name=&quot;message&quot;
+          onChange={(e) =&gt; {
+            setMessage(e.target.value)
+          }}
+        /&gt;
+        &lt;ValidationError
+          prefix=&quot;Message&quot;
+          field=&quot;message&quot;
+          errors={state.errors}
+        /&gt;
+        &lt;ReCAPTCHA
+          sitekey=&quot;6Lfj9NYfAAAAAP8wPLtzrsSZeACIcGgwuEIRvbSg&quot;
+          onChange={(e) =&gt; {
+            setIsHuman(true)
+          }}
+        &gt;&lt;/ReCAPTCHA&gt;
+        &lt;button
+          type=&quot;submit&quot;
+          disabled={state.submitting || !validEmail || !message || !isHuman}
+        &gt;
+          Submit
+        &lt;/button&gt;
+      &lt;/form&gt;
+      &lt;ToastContainer /&gt;
+    &lt;/Container&gt;
+  )
+}
+</content>
+  </file>
+  <file path="/Users/nicom/Documents/Portfolio-v2/src\components\Form\styles.ts" name="styles.ts">
+    <content>import styled from &quot;styled-components&quot;;
+
+
+export const Container = styled.div`
+  margin-top: 3rem;
+  display: grid;
+  place-items: center;
+  h2{
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  form{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    input, textarea{
+      width: 60rem;
+      padding: 1rem 2rem;
+      border-radius: 1.6rem;
+      outline: none;
+      border: none;
+      background:none;
+      border: 1px solid #FFF;
+      color: white;
+      font-weight: 600;
+      &amp;::placeholder{
+        color: #FFF;
+      }
+    }
+
+    textarea{
+      height: 20rem;
+      overflow-y: auto;
+      resize: none;
+    }
+
+    button{
+      padding: 1rem 6rem;
+      text-transform: uppercase;
+    }
+  
+  }
+
+  @media (max-width: 740px){
+    form{
+      width: 100%;
+      
+      input,textarea{
+        width: 100%;
+      }
+    }
+  }
+`
+
+
+export const ContainerSucces = styled.div`
+  margin-top: 10rem;
+  text-align: center;
+
+  button{
+    border-radius: 0.6rem;
+    padding: 1rem;
+    margin-top: 0.8rem;
+    text-transform: uppercase;
+    text-align: center;
+    color: #fbfbfb;
+  }
+`</content>
+  </file>
+  <file path="/Users/nicom/Documents/Portfolio-v2/src\components\Header\Header.tsx" name="Header.tsx">
+    <content>import { Container } from &apos;./styles&apos;
+import { BrowserRouter as Router } from &apos;react-router-dom&apos;
+import { NavHashLink, HashLink } from &apos;react-router-hash-link&apos;
+import { useState } from &apos;react&apos;
+import Resume from &apos;../../assets/Nico_Mcgill_CV.pdf&apos;
+export function Header() {
+  const [isActive, setActive] = useState(false)
+  function toggleTheme() {
+    let html = document.getElementsByTagName(&apos;html&apos;)[0]
+    html.classList.toggle(&apos;light&apos;)
+  }
+  function closeMenu() {
+    setActive(false)
+  }
+  return (
+    &lt;Container className=&quot;header-fixed&quot;&gt;
+      &lt;Router&gt;
+        &lt;HashLink smooth to=&quot;#home&quot; className=&quot;logo&quot;&gt;
+          &lt;span&gt;{&quot;&lt;Nico &quot;}&lt;/span&gt;
+          &lt;span&gt;{&quot; McGill/&gt;&quot;}&lt;/span&gt;
+        &lt;/HashLink&gt;
+        &lt;input
+          onChange={toggleTheme}
+          className=&quot;container_toggle&quot;
+          type=&quot;checkbox&quot;
+          id=&quot;switch&quot;
+          name=&quot;mode&quot;
+        /&gt;
+        &lt;label htmlFor=&quot;switch&quot;&gt;Toggle&lt;/label&gt;
+        &lt;nav className={isActive ? &apos;active&apos; : &apos;&apos;}&gt;
+          &lt;NavHashLink smooth to=&quot;#home&quot; onClick={closeMenu}&gt;
+            Home
+          &lt;/NavHashLink&gt;
+          &lt;NavHashLink smooth to=&quot;#about&quot; onClick={closeMenu}&gt;
+            About me
+          &lt;/NavHashLink&gt;
+          &lt;NavHashLink smooth to=&quot;#project&quot; onClick={closeMenu}&gt;
+            Project
+          &lt;/NavHashLink&gt;
+          &lt;NavHashLink smooth to=&quot;#contact&quot; onClick={closeMenu}&gt;
+            Contact
+          &lt;/NavHashLink&gt;
+          &lt;a href={Resume} download className=&quot;button&quot;&gt;
+            Resume
+          &lt;/a&gt;
+        &lt;/nav&gt;
+        &lt;div
+          aria-expanded={isActive ? &apos;true&apos; : &apos;false&apos;}
+          aria-haspopup=&quot;true&quot;
+          aria-label={isActive ? &apos;Fechar menu&apos; : &apos;Abrir menu&apos;}
+          className={isActive ? &apos;menu active&apos; : &apos;menu&apos;}
+          onClick={() =&gt; {
+            setActive(!isActive)
+          }}
+        &gt;&lt;/div&gt;
+      &lt;/Router&gt;
+    &lt;/Container&gt;
+  )
+}
+</content>
+  </file>
+  <file path="/Users/nicom/Documents/Portfolio-v2/src\components\Header\styles.ts" name="styles.ts">
+    <content>import styled from &quot;styled-components&quot;;
+
+
+export const Container = styled.header`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.8rem 10rem;
+  
+  background-color: #21212150;
+  
+  backdrop-filter: blur(6px);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 1000;
+
+  nav{
+    display: flex;
+    align-items: center;
+    gap: 1.8rem;
+    a{
+      color: #FFFF;
+      padding: 0.6rem;
+      font-family: &apos;Red Hat Display&apos;, sans-serif;
+      font-weight: 500;
+      text-transform: uppercase;
+      transition: filter 0.25s;
+
+      &amp;.button{
+        padding: 0.6rem 2rem;
+      }
+
+      &amp;:hover{
+        filter: brightness(0.6);
+      }
+    }
+
+  }
+
+  .menu-container{
+    cursor: pointer;
+    padding: 0.6rem 0;
+  }
+
+  .menu{
+    width: 2rem;
+    height: 0.2rem;
+    background: #FFFF;
+    position: relative;
+    cursor: pointer;
+    display: none;
+
+    &amp;:before{
+      bottom: 0.5rem;
+    }
+    &amp;:after{
+      top: 0.5rem;
+    }
+
+
+    &amp;.active:before{
+      bottom: 0;
+      transform: rotate(45deg);
+    }
+
+    &amp;.active:after{
+      top: 0;
+      transform: rotate(135deg);
+    }
+
+    &amp;.active{
+      background-color: rgba(0, 0, 0, 0);
+    }
+
+  }
+
+  .menu:before, .menu:after {
+    content: &quot;&quot;;
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 0.2rem;
+    background: #FFFF;
+    cursor: pointer;
+    transition: .6s;
+  }
+
+
+  input[type=checkbox] {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+    outline: none;
+  }
+
+  label {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 55px;
+    height: 30px;
+    background: var(--green);
+    display: block;
+    justify-content: center;
+    align-items: center;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 100px;
+    position: relative;
+    margin-left: auto;
+    right: 10px;
+  }
+
+  @media only screen and (max-width: 800px) {
+    label {
+    position: relative;
+   }
+  }
+
+  label:after {
+    content: &apos;&apos;;
+    background: #FFF;
+    width: 20px;
+    height: 20px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    position: absolute;
+    top: 5px;
+    left: 4px;
+   transition: cubic-bezier(0.68, -0.55, 0.27, 01.55) 320ms;
+  }
+
+  input:checked + label {
+    background: var(--pink);
+  }
+
+  input:checked + label:after {
+    left: calc(100% - 5px);
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+
+  @media (max-width: 960px){
+    padding: 1.8rem 3rem;
+
+    .menu{
+      display: block;
+    }
+
+    nav {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      overflow: hidden;
+      opacity: 0;
+      visibility: hidden;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      background: var(--blue);
+      top: 0;
+      left: 0;
+      transition: opacity 0.25s;
+      background-color: var(--green);
+
+      a.button{
+        background-color: var(--pink);
+      }
+
+      &amp;.active{
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+  
+`</content>
+  </file>
+  <file path="/Users/nicom/Documents/Portfolio-v2/src\components\Hero\AnimatedSVG.js" name="AnimatedSVG.js">
+    <content>import React, { useRef, useEffect } from &apos;react&apos;;
+
+const AnimatedSVG = ({ children }) =&gt; {
+  const svgRef = useRef(null);
+
+  useEffect(() =&gt; {
+    const observer = new IntersectionObserver(
+      (entries) =&gt; {
+        entries.forEach((entry) =&gt; {
+          if (entry.isIntersecting) {
+            svgRef.current.classList.add(&apos;animate&apos;);
+          } else {
+            svgRef.current.classList.remove(&apos;animate&apos;);
+          }
+        });
+      },
+      { threshold: 0.5 } // Adjust the threshold as needed
+    );
+
+    if (svgRef.current) {
+      observer.observe(svgRef.current);
+    }
+
+    return () =&gt; {
+      if (svgRef.current) {
+        observer.unobserve(svgRef.current);
+      }
+    };
+  }, []);
+
+  return (
+    &lt;div ref={svgRef} className=&quot;animated-svg&quot;&gt;
+      {children}
+    &lt;/div&gt;
+  );
+};
+
+export default AnimatedSVG;</content>
+  </file>
+  <file path="/Users/nicom/Documents/Portfolio-v2/src\components\Hero\Hero.tsx" name="Hero.tsx">
+    <content>import { BrowserRouter } from &quot;react-router-dom&quot;
+import { Container } from &quot;./styles&quot;
+import ScrollAnimation from &quot;react-animate-on-scroll&quot;
+import Illustration from &quot;../../assets/illustration.svg&quot;
+import { NavHashLink } from &quot;react-router-hash-link&quot;
+import linkedin from &apos;../../assets/linkedin.svg&apos;
+import githubIcon from &apos;../../assets/github.svg&apos;
+import whatsapp from &apos;../../assets/whatsapp.svg&apos;
+import Hello from &apos;../../assets/Hello.gif&apos;
+import name from &apos;../../assets/name.svg&apos;
+import AnimatedSVG from &quot;./AnimatedSVG&quot;
+
+
+
+export function Hero() {
+  return (
+    &lt;Container id=&quot;home&quot;&gt;
+      &lt;div className=&quot;hero-text&quot;&gt;
+        &lt;ScrollAnimation animateIn=&quot;fadeInUp&quot;&gt;
+          &lt;p&gt;Hello &lt;img src={Hello} alt=&quot;Hello&quot; width=&quot;20px&quot;/&gt;, I&apos;m&lt;/p&gt;
+        &lt;/ScrollAnimation&gt;
+        &lt;ScrollAnimation animateIn=&quot;fadeInUp&quot; delay={0.2 * 1000}&gt;
+          &lt;AnimatedSVG&gt;
+            &lt;img src={name} alt=&quot;Name SVG&quot; className=&quot;svg-icon&quot;/&gt;
+          &lt;/AnimatedSVG&gt;
+        &lt;/ScrollAnimation&gt;
+        &lt;ScrollAnimation animateIn=&quot;fadeInUp&quot; delay={0.2 * 1000}&gt;
+          &lt;h1&gt;Nico McGill&lt;/h1&gt;
+        &lt;/ScrollAnimation&gt;
+        &lt;ScrollAnimation animateIn=&quot;fadeInUp&quot; delay={0.4 * 1000}&gt;
+          &lt;h3&gt;Full Stack Developer&lt;/h3&gt;
+        &lt;/ScrollAnimation&gt;
+        &lt;ScrollAnimation animateIn=&quot;fadeInUp&quot; delay={0.6 * 1000}&gt;
+          &lt;p className=&quot;small-resume&quot;&gt;4 Years of Experience&lt;/p&gt;
+        &lt;/ScrollAnimation&gt;
+        &lt;ScrollAnimation animateIn=&quot;fadeInUp&quot; delay={0.8 * 1000}&gt;
+          &lt;BrowserRouter&gt;
+            &lt;NavHashLink smooth to=&quot;#contact&quot; className=&quot;button&quot;&gt;Contact&lt;/NavHashLink&gt;
+          &lt;/BrowserRouter&gt;
+        &lt;/ScrollAnimation&gt;
+        &lt;ScrollAnimation animateIn=&quot;fadeInUp&quot; delay={1 * 1000}&gt;
+      &lt;div className=&quot;social-media&quot;&gt;&lt;a
+        href=&quot;https://www.linkedin.com/in/nico-mcgill&quot;
+        target=&quot;_blank&quot;
+        rel=&quot;noreferrer&quot;
+      &gt;
+        &lt;img src={linkedin} alt=&quot;Linkedin&quot; /&gt;
+      &lt;/a&gt;
+        &lt;a
+          href=&quot;https://github.com/lazysusan01/&quot;
+          target=&quot;_blank&quot;
+          rel=&quot;noreferrer&quot;
+        &gt;
+          &lt;img src={githubIcon} alt=&quot;GitHub&quot; /&gt;
+        &lt;/a&gt;
+        &lt;a
+          href=&quot;https://api.whatsapp.com/send/?phone=%2B919630576848&amp;text=Hello+Vinayak&quot;
+          target=&quot;_blank&quot;
+          rel=&quot;noreferrer&quot;
+        &gt;
+          &lt;img src={whatsapp} alt=&quot;Whatsapp&quot; /&gt;
+        &lt;/a&gt;
+        &lt;/div&gt;
+        &lt;/ScrollAnimation&gt;
+      &lt;/div&gt;
+      &lt;div className=&quot;hero-image&quot;&gt;
+        &lt;ScrollAnimation animateIn=&quot;fadeInRight&quot; delay={1 * 1000}&gt;
+          &lt;img src={Illustration} alt=&quot;Ilustração&quot; /&gt;
+        &lt;/ScrollAnimation&gt;
+      &lt;/div&gt;
+    &lt;/Container&gt;
+  )
+}</content>
+  </file>
+  <file path="/Users/nicom/Documents/Portfolio-v2/src\components\Hero\styles.ts" name="styles.ts">
+    <content>import styled from &quot;styled-components&quot;;
+
+export const Container = styled.section`
+  padding-top: 15%;
+  display: flex;
+  justify-content: space-between;
+  gap: 8rem;
+  background: rgba(0,0,0,0);
+  .hero-text{
+    &amp; &gt; p{
+      font-size: 1.8rem;
+    }
+    h1{
+      font-size: 7rem;
+    }
+
+    h3{
+      color:var(--green);
+      margin: 1rem 0;
+    }
+
+    
+    p.small-resume {
+      margin-bottom: 5rem;
+    }
+  }
+// New added
+  .social-media{
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-top:5rem;
+    padding-left:1rem;
+
+    img,span{
+      font-size: 3rem;
+      width: 3.5rem;
+    }
+  }
+
+  .button{
+    margin-top: 5rem;
+    padding: 1.4rem 6rem;
+  }
+
+  .hero-image{
+    img{
+      max-width: 500px;
+    }
+  }
+
+  .animated-svg {
+    .svg-icon path {
+      stroke: #FFFFFF;
+      stroke-width: 1;
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 1000;
+      animation: none;
+    }
+  
+    &amp;.animate {
+      .svg-icon path {
+        animation: draw 5s forwards;
+      }
+    }
+  }
+  
+  @keyframes draw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  .svg-icon path {
+    stroke: #FFFFFF;
+    stroke-width: 1;
+    stroke-dasharray: 1000;  // Length of the path
+    stroke-dashoffset: 1000;  // Initially equal to the path length
+    animation: draw 5s forwards;  // Adjust the timing as needed
+  }
+  
+  @keyframes draw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  
+
+  @media(max-width: 960px){
+    display: block;
+    margin-top: 15%;
+    .hero-text{
+
+      h1{
+        font-size: 5rem;
+      }
+    }
+    
+    .hero-image{
+      display: none;
+    }
+  }
+
+  @media(max-width: 600px){
+    margin-top: 35%;
+  }
+  @media(max-width: 480px){
+    margin-top: 45%;
+  }
+`</content>
+  </file>
+  <file path="/Users/nicom/Documents/Portfolio-v2/src\components\Main\Main.tsx" name="Main.tsx">
+    <content>import Particles from &quot;react-tsparticles&quot;
+import { Container } from &quot;./styles&quot;;
+import { Hero } from &quot;../Hero/Hero&quot;;
+import { About } from &quot;../About/About&quot;;
+import { Contact } from &quot;../Contact/Contact&quot;;
+import { Project } from &quot;../Project/Project&quot;;
+import wordpress from &quot;../../assets/wordpress.svg&quot;;
+
+import htmlIcon from &quot;../../assets/html-icon.svg&quot;;
+import cssIcon from &quot;../../assets/css-icon.svg&quot;;
+
+import jsIcon from &quot;../../assets/js-icon.svg&quot;;
+import nodeIcon from &quot;../../assets/node-icon.svg&quot;;
+import reactIcon from &quot;../../assets/react-icon.svg&quot;;
+import typescriptIcon from &quot;../../assets/typescript-icon.svg&quot;;
+
+import boostrapIcon from &quot;../../assets/bootstrap-icon.svg&quot;;
+
+export function Main() {
+  return (
+    &lt;Container&gt;
+      &lt;Particles
+        id=&quot;tsparticles&quot;
+        options={{
+          &quot;fullScreen&quot;: {
+            &quot;enable&quot;: true,
+            &quot;zIndex&quot;: 1
+          },
+          &quot;detectRetina&quot;: true,
+          &quot;fpsLimit&quot;: 60,
+          &quot;interactivity&quot;: {
+            &quot;events&quot;: {
+              &quot;onClick&quot;: {
+                &quot;enable&quot;: true,
+                &quot;mode&quot;: &quot;push&quot;
+              },
+              &quot;onDiv&quot;: {
+                &quot;elementId&quot;: &quot;repulse-div&quot;,
+                &quot;enable&quot;: false,
+                &quot;mode&quot;: &quot;repulse&quot;
+              },
+              &quot;onHover&quot;: {
+                &quot;enable&quot;: true,
+                &quot;mode&quot;: &quot;bubble&quot;,
+                &quot;parallax&quot;: {
+                  &quot;enable&quot;: false,
+                  &quot;force&quot;: 60,
+                  &quot;smooth&quot;: 10
+                }
+              },
+              &quot;resize&quot;: true
+            },
+            &quot;modes&quot;: {
+              &quot;bubble&quot;: {
+                &quot;distance&quot;: 400,
+                &quot;duration&quot;: 2,
+                &quot;opacity&quot;: 0.8,
+                &quot;size&quot;: 2,
+              },
+              &quot;connect&quot;: {
+                &quot;distance&quot;: 80,
+                &quot;lineLinked&quot;: {
+                  &quot;opacity&quot;: 0.5
+                },
+                &quot;radius&quot;: 60
+              },
+              &quot;grab&quot;: {
+                &quot;distance&quot;: 400,
+                &quot;lineLinked&quot;: {
+                  &quot;opacity&quot;: 1
+                }
+              },
+              &quot;push&quot;: {
+                &quot;quantity&quot;: 2
+              },
+              &quot;remove&quot;: {
+                &quot;quantity&quot;: 2
+              },
+              &quot;repulse&quot;: {
+                &quot;distance&quot;: 200,
+                &quot;duration&quot;: 0.4
+              }
+            }
+          },
+          &quot;particles&quot;: {
+            &quot;color&quot;: {
+              &quot;value&quot;: &quot;#ffffff&quot;
+            },
+            &quot;lineLinked&quot;: {
+              &quot;blink&quot;: false,
+              &quot;color&quot;: &quot;#000&quot;,
+              &quot;consent&quot;: false,
+              &quot;distance&quot;: 150,
+              &quot;enable&quot;: false,
+              &quot;opacity&quot;: 0.4,
+              &quot;width&quot;: 1
+            },
+            &quot;move&quot;: {
+              &quot;attract&quot;: {
+                &quot;enable&quot;: false,
+                &quot;rotate&quot;: {
+                  &quot;x&quot;: 600,
+                  &quot;y&quot;: 1200
+                }
+              },
+              &quot;bounce&quot;: false,
+              &quot;direction&quot;: &quot;none&quot;,
+              &quot;enable&quot;: true,
+              &quot;outMode&quot;: &quot;out&quot;,
+              &quot;random&quot;: false,
+              &quot;speed&quot;: 2,
+              &quot;straight&quot;: false
+            },
+            &quot;number&quot;: {
+              &quot;density&quot;: {
+                &quot;enable&quot;: true,
+                &quot;area&quot;: 800
+              },
+              &quot;limit&quot;: 20,
+              &quot;value&quot;: 15,
+            },
+            &quot;opacity&quot;: {
+              &quot;animation&quot;: {
+                &quot;enable&quot;: true,
+                &quot;minimumValue&quot;: 0.2,
+                &quot;speed&quot;: 1,
+                &quot;sync&quot;: false
+              },
+              &quot;random&quot;: true,
+              &quot;value&quot;: 1
+            },
+            &quot;rotate&quot;: {
+              &quot;animation&quot;: {
+                &quot;enable&quot;: true,
+                &quot;speed&quot;: 5,
+                &quot;sync&quot;: false
+              },
+              &quot;direction&quot;: &quot;random&quot;,
+              &quot;random&quot;: true,
+              &quot;value&quot;: 0
+            },
+            &quot;shape&quot;: {
+              &quot;character&quot;: {
+                &quot;fill&quot;: false,
+                &quot;font&quot;: &quot;Verdana&quot;,
+                &quot;style&quot;: &quot;&quot;,
+                &quot;value&quot;: &quot;*&quot;,
+                &quot;weight&quot;: &quot;400&quot;
+              },
+              &quot;image&quot;: [
+                {
+                  &quot;src&quot;: boostrapIcon,
+                  &quot;width&quot;: 20,
+                  &quot;height&quot;: 20
+                },
+                {
+                  &quot;src&quot;: cssIcon,
+                  &quot;width&quot;: 20,
+                  &quot;height&quot;: 20
+                },
+                {
+                  &quot;src&quot;: wordpress,
+                  &quot;width&quot;: 20,
+                  &quot;height&quot;: 20
+                },
+                {
+                  &quot;src&quot;: htmlIcon,
+                  &quot;width&quot;: 20,
+                  &quot;height&quot;: 20
+                },
+                {
+                  &quot;src&quot;: jsIcon,
+                  &quot;width&quot;: 20,
+                  &quot;height&quot;: 20
+                },
+                // {
+                //   &quot;src&quot;: mysqlIcon,
+                //   &quot;width&quot;: 20,
+                //   &quot;height&quot;: 20
+                // },
+                {
+                  &quot;src&quot;: nodeIcon,
+                  &quot;width&quot;: 20,
+                  &quot;height&quot;: 20
+                },
+                {
+                  &quot;src&quot;: reactIcon,
+                  &quot;width&quot;: 20,
+                  &quot;height&quot;: 20
+                },
+                {
+                  &quot;src&quot;: typescriptIcon,
+                  &quot;width&quot;: 20,
+                  &quot;height&quot;: 20
+                },
+
+              ],
+              &quot;polygon&quot;: {
+                &quot;sides&quot;: 5
+              },
+              &quot;stroke&quot;: {
+                &quot;color&quot;: &quot;#000000&quot;,
+                &quot;width&quot;: 0
+              },
+              &quot;type&quot;: &quot;image&quot;
+            },
+            &quot;size&quot;: {
+              &quot;animation&quot;: {
+                &quot;enable&quot;: false,
+                &quot;minimumValue&quot;: 0.1,
+                &quot;speed&quot;: 40,
+                &quot;sync&quot;: false
+              },
+              &quot;random&quot;: false,
+              &quot;value&quot;: 16
+            }
+          },
+          &quot;polygon&quot;: {
+            &quot;draw&quot;: {
+              &quot;enable&quot;: false,
+              &quot;lineColor&quot;: &quot;#ffffff&quot;,
+              &quot;lineWidth&quot;: 0.5
+            },
+            &quot;move&quot;: {
+              &quot;radius&quot;: 10
+            },
+            &quot;scale&quot;: 1,
+            &quot;url&quot;: &quot;&quot;
+          },
+          &quot;background&quot;: {
+            &quot;image&quot;: &quot;&quot;,
+            &quot;position&quot;: &quot;50% 50%&quot;,
+            &quot;repeat&quot;: &quot;no-repeat&quot;,
+            &quot;size&quot;: &quot;cover&quot;
+          }
+        }}
+      /&gt;
+      &lt;Hero&gt;&lt;/Hero&gt;
+      &lt;About&gt;&lt;/About&gt;
+      &lt;Project&gt;&lt;/Project&gt;
+      &lt;Contact&gt;&lt;/Contact&gt;
+    &lt;/Container&gt;
+  );
+}</content>
+  </file>
+  <file path="/Users/nicom/Documents/Portfolio-v2/src\components\Main\styles.ts" name="styles.ts">
+    <content>import styled from &quot;styled-components&quot;;
+
+
+export const Container = styled.main`
+  position: relative;
+  z-index: 0;
+  padding: 0 10rem;
+  overflow-x: hidden;
+  #tsparticles{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  @media (max-width: 740px){
+    padding: 0 4rem;
+  }
+
+  @media(max-width: 360px){
+    padding: 0 2rem;
+  }
+`</content>
+  </file>
+  <file path="/Users/nicom/Documents/Portfolio-v2/src\components\Project\Project.tsx" name="Project.tsx">
+    <content>import { Container } from &quot;./styles&quot;;
+// import githubIcon from &quot;../../assets/github.svg&quot;
+// import DownloadApp from &apos;../../assets/download.png&apos;
+import externalLink from &quot;../../assets/external-link.svg&quot;
+import ScrollAnimation from &quot;react-animate-on-scroll&quot;;
+
+
+export function Project() {
+  return (
+    &lt;Container id=&quot;project&quot;&gt;
+      &lt;h2&gt;My Projects&lt;/h2&gt;
+      &lt;div className=&quot;projects&quot;&gt;
+        &lt;ScrollAnimation animateIn=&quot;flipInY&quot;&gt;
+          &lt;div className=&quot;project&quot;&gt;
+            &lt;header&gt;
+              &lt;svg width=&quot;50&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; role=&quot;img&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;#23ce6b &quot; stroke-width=&quot;1&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; &gt;&lt;title&gt;Folder&lt;/title&gt;&lt;path d=&quot;M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;
+              &lt;div className=&quot;project-links&quot;&gt;
+                &lt;a href=&quot;https://github.com/Lazysusan01/usdot-phmsa-hazmat-parser&quot; target=&quot;_blank&quot; rel=&quot;noreferrer&quot;&gt;
+                  &lt;img src={externalLink} alt=&quot;Visit site&quot; /&gt;
+                &lt;/a&gt;
+              &lt;/div&gt;
+            &lt;/header&gt;
+            &lt;div className=&quot;body&quot;&gt;
+              &lt;h3&gt;Transport regulation Lookup Tool&lt;/h3&gt;
+              &lt;p&gt;
+              This webapp was built for my current employer, Chemwatch. Using open source tooling, I developed this using flask and TailwindCSS, designed to allow a user to navigate the Code of Federal Regulations on Transport of Hazardous Materials, Fascinating, I know...
+              &lt;/p&gt;
+            &lt;/div&gt;
+            &lt;footer&gt;
+              &lt;ul className=&quot;tech-list&quot;&gt;
+                &lt;li&gt;Flask&lt;/li&gt;
+                &lt;li&gt;Heroku&lt;/li&gt;
+                &lt;li&gt;RegEx&lt;/li&gt;
+              &lt;/ul&gt;
+            &lt;/footer&gt;
+          &lt;/div&gt;
+        &lt;/ScrollAnimation&gt;
+        &lt;ScrollAnimation animateIn=&quot;flipInY&quot; delay={500}&gt;
+          &lt;div className=&quot;project&quot;&gt;
+            &lt;header&gt;
+              &lt;svg width=&quot;50&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; role=&quot;img&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;#23ce6b &quot; stroke-width=&quot;1&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; &gt;&lt;title&gt;Folder&lt;/title&gt;&lt;path d=&quot;M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;
+              &lt;div className=&quot;project-links&quot;&gt;
+                &lt;a href=&quot;http://getroasted.lol&quot; target=&quot;_blank&quot; rel=&quot;noreferrer&quot;&gt;
+                  &lt;img src={externalLink} alt=&quot;Visit site&quot; /&gt;
+                &lt;/a&gt;
+              &lt;/div&gt;
+            &lt;/header&gt;
+            &lt;div className=&quot;body&quot;&gt;
+              &lt;h3&gt;GetRoasted.lol&lt;/h3&gt;
+              &lt;p&gt;
+              It&apos;s a webapp that allows users to upload photos of themselves or friends, and an AI will roast the photo. It&apos;s a fun project that I built to learn more about web development and to have a bit of fun while travelling South-East-Asia for 6 months.
+              &lt;/p&gt;
+            &lt;/div&gt;
+            &lt;footer&gt;
+              &lt;ul className=&quot;tech-list&quot;&gt;
+                &lt;li&gt;React&lt;/li&gt;
+              &lt;/ul&gt;
+            &lt;/footer&gt;
+          &lt;/div&gt;
+        &lt;/ScrollAnimation&gt;
+        &lt;ScrollAnimation animateIn=&quot;flipInY&quot; delay={1000}&gt;
+          &lt;div className=&quot;project&quot;&gt;
+            &lt;header&gt;
+              &lt;svg width=&quot;50&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; role=&quot;img&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;#23ce6b &quot; stroke-width=&quot;1&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; &gt;&lt;title&gt;Folder&lt;/title&gt;&lt;path d=&quot;M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;
+              &lt;div className=&quot;project-links&quot;&gt;
+                &lt;a href=&quot;https://memorysquares.co.uk/&quot; target=&quot;_blank&quot; rel=&quot;noreferrer&quot;&gt;
+                  &lt;img src={externalLink} alt=&quot;Visit site&quot; /&gt;
+                &lt;/a&gt;
+              &lt;/div&gt;
+            &lt;/header&gt;
+            &lt;div className=&quot;body&quot;&gt;
+              &lt;h3&gt;Memory Squares&lt;/h3&gt;
+              &lt;p&gt;
+              Memory Squares is a website designed to allow users to generate digital memorial pages for loved ones, allowing uploads of videos, photos, music etc. to built a long term memory of the deceased. This project was built using React and Typescript.
+              &lt;/p&gt;
+            &lt;/div&gt;
+            &lt;footer&gt;
+              &lt;ul className=&quot;tech-list&quot;&gt;
+                &lt;li&gt;React&lt;/li&gt;
+                &lt;li&gt;Typescript&lt;/li&gt;
+                &lt;li&gt;Html&lt;/li&gt;
+                &lt;li&gt;css&lt;/li&gt;
+              &lt;/ul&gt;
+            &lt;/footer&gt;
+          &lt;/div&gt;
+        &lt;/ScrollAnimation&gt;
+      &lt;/div&gt;
+    &lt;/Container&gt;
+  );
+}</content>
+  </file>
+  <file path="/Users/nicom/Documents/Portfolio-v2/src\components\Project\styles.ts" name="styles.ts">
+    <content>import styled from &quot;styled-components&quot;;
+
+
+export const Container = styled.section`
+  margin-top: 15rem;
+  
+  h2{
+    text-align: center;
+    font-size: 4rem;
+    margin-bottom: 3rem;
+  }
+  .projects{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    gap: 2rem;
+    padding: 1rem;
+    overflow: hidden;
+
+    .project{
+      padding: 2rem 1.8rem;
+      background-color: #2b2b2b;
+      border-radius: 1.2rem;
+      transition: 0.25s;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      color: #FFF;
+      &amp;:hover{
+        transform: translateY(-5px);
+        background-color: var(--pink);
+      }
+
+      header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: var(--blue);
+        margin-bottom: 3.6rem;
+        .project-links{
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+        }
+        a &gt; img {
+          width: 5.0rem;
+        }
+      }
+      
+      h3{
+        margin-bottom: 2rem;
+      }
+
+      p{
+        letter-spacing: 0.12rem;
+        margin-bottom: 2rem;
+        a{
+          color: #FFFF;
+          border-bottom: 1px solid var(--green);
+          transition: color 0.25s;
+          &amp;:hover{
+            color: var(--green);
+          }
+        }
+      }
+
+      footer{
+        margin-top: auto;
+        .tech-list{
+          display: flex;
+          align-items: center;
+          gap: 2rem;
+          font-size: 1.4rem;
+          opacity: 0.6;
+        }
+      }
+
+    }
+  }
+
+  @media (max-width: 960px){
+    .projects{
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 740px){
+    .projects{
+      grid-template-columns: 1fr;
+    }
+  }
+`</content>
+  </file>
+  <file path="/Users/nicom/Documents/Portfolio-v2/src\styles\global.ts" name="global.ts">
+    <content>import { createGlobalStyle } from &quot;styled-components&quot;;
+
+export const GlobalStyle = createGlobalStyle`
+  :root{
+    --pink: #E31F71;
+    --black: #212121;
+    --green: #23ce6b;
+    --blue: #016fb9;
+    scroll-padding-top: 10rem;
+
+    &amp;.light{
+
+      body{
+        transition: 0.5s;
+        background-color: #f5f5f5;
+        color: var(--black);
+      }
+
+      .logo{
+        color: var(--black);
+      }
+      
+      .svg-icon {
+        filter: invert(100%); /* Inverts white to black */
+      }
+    
+
+      header.header-fixed{
+        transition: 0.5s;
+        background-color: #f5f5f550;
+        a{
+          transition: 0.5s;
+          color: black;
+        }
+        .menu,.menu:before, .menu:after{
+          background-color: var(--black); 
+        }
+        .menu.active{
+          background-color: rgba(555,555,555,0);
+        }
+      }
+
+      footer.footer{
+        transition: 0.5s;
+        background-color: rgba(0,0,0,0.1);
+        color: var(--black);
+      }
+
+      form{
+        input,textarea{
+          transition: 0.5s;
+          border: solid 1px var(--black);
+          color: var(--black);
+          &amp;::placeholder{
+            transition: 0.5s;
+            color: var(--black);
+          }
+        }
+      }
+
+    }
+  }
+
+  ul, li {
+    text-decoration: none;
+    list-style: none;
+    margin: 0;
+    padding:0;
+  }
+
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html{
+    font-size: 62.5%;
+  }
+
+  body{
+    font-size: 1.6rem;
+    -webkit-font-smoothing: antialiased;
+    background-color: var(--black);
+    color: #FFFF;
+  }
+
+  body, input, textarea, button{
+    font-family: &apos;Red Hat Display&apos;, sans-serif;
+    font-weight: 400;
+  }
+
+  a{
+    text-decoration: none;
+  }
+
+  button, .button{
+    border: none;
+    cursor: pointer;
+    background-color: var(--green);
+    color: #FFFF;
+    border-radius: 2rem;
+    font-weight: 500;
+    transition: filter 0.25s;
+    &amp;:hover{
+      filter: brightness(0.8);
+    }
+  }
+
+  button:disabled, .button:disabled{
+    filter: brightness(0.8);
+    cursor: not-allowed;
+  }
+
+
+  .logo{
+    font-size: 3rem;
+    color: #FFFF;
+    // &amp;::first-letter{
+    //   color: var(--green);
+    // }
+  }
+  .svg-icon {
+    fill: #fff;  /* White fill */
+    stroke: #fff;  /* White stroke */
+  }
+
+`</content>
+  </file>
+</codebase>
