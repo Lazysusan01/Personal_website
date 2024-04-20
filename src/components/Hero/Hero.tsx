@@ -7,7 +7,7 @@ import githubIcon from '../../assets/github.svg'
 import whatsapp from '../../assets/whatsapp.svg'
 import Hello from '../../assets/Hello.gif'
 import nicomcgill from '../../assets/nicomcgill.jpg'
-import resume from '../../assets/Nico_McGill_CV.pdf'
+import resume from '../../assets/nico_mcgill_cv.pdf'
 
 export function Hero() {
   return (
