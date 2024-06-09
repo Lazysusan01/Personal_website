@@ -4,6 +4,8 @@ import { NavHashLink, HashLink } from 'react-router-hash-link'
 import { useState } from 'react'
 import Resume from '../../assets/Nico_Mcgill_CV.pdf'
 export function Header() {
+  let html = document.getElementsByTagName('html')[0]
+  html.classList.toggle('light')
   const [isActive, setActive] = useState(false)
   function toggleTheme() {
     let html = document.getElementsByTagName('html')[0]
@@ -35,7 +37,7 @@ export function Header() {
             About me
           </NavHashLink>
           <NavHashLink smooth to="#project" onClick={closeMenu}>
-            Project
+            Projects
           </NavHashLink>
           <NavHashLink smooth to="#contact" onClick={closeMenu}>
             Contact
