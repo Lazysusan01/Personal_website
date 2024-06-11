@@ -20,7 +20,7 @@ RUN npm run build
 RUN npm install -g serve
 
 # Make port 80 available to the world outside this container
-EXPOSE 80
+EXPOSE 3000
 
 # Define the command to run your app using serve
-CMD ["serve", "-s", "build", "-l", "80"]
+CMD ["serve", "-s", "build", "-l", "3000"] 
