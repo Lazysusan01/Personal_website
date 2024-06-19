@@ -42,6 +42,9 @@ export function Header() {
           <NavHashLink smooth to="#contact" onClick={closeMenu}>
             Contact
           </NavHashLink>
+          <NavHashLink smooth to="#toy" onClick={closeMenu}>
+            Toy Robot
+          </NavHashLink>
         </nav>
         <div
           aria-expanded={isActive ? 'true' : 'false'}
