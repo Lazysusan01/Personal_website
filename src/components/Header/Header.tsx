@@ -2,7 +2,6 @@ import { Container } from './styles'
 import { BrowserRouter as Router } from 'react-router-dom'
 import { NavHashLink, HashLink } from 'react-router-hash-link'
 import { useState } from 'react'
-import Resume from '../../assets/Nico_Mcgill_CV.pdf'
 export function Header() {
   let html = document.getElementsByTagName('html')[0]
   html.classList.toggle('light')
@@ -41,9 +40,6 @@ export function Header() {
           </NavHashLink>
           <NavHashLink smooth to="#contact" onClick={closeMenu}>
             Contact
-          </NavHashLink>
-          <NavHashLink smooth to="#toy" onClick={closeMenu}>
-            Toy Robot
           </NavHashLink>
         </nav>
         <div
