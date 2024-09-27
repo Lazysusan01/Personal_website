@@ -22,19 +22,14 @@ export function About() {
         </ScrollAnimation>
         <ScrollAnimation animateIn="fadeInLeft" delay={0.1 * 1000}>
           <p>
-            Hi there! I'm Nico, a full stack developer with a passion for building with software.
+            Hi there,  I’m Nico. 
           </p>
         </ScrollAnimation>
         <ScrollAnimation animateIn="fadeInLeft" delay={0.2 * 1000} style={{ marginTop: "2rem", marginBottom: "2rem" }}>
           <p>
-          I am passionate about harnessing the power of AI and automation to transform your business. With proficiency and a proven track record of integrating advanced technologies into every facet of your operations, I focus on simplifying and automating processes, from HR and payroll to the development of new, AI-driven features.
+          I built Webapps for fun, and sometimes for money. Please contact me if you’d like me to build something for you, for money.
           </p>
           <br /> 
-          <p>
-          I specialize in exploring untapped areas where AI and large language models can make a significant impact, driving your business forward with cutting-edge solutions tailored to your unique needs. Partner with me to unlock the full potential of AI and automation in your organization.</p>
-        </ScrollAnimation>
-        <ScrollAnimation animateIn="fadeInLeft" delay={0.3 * 1000}>
-          <p>Book a <a href="/#contact">free consultation</a> below.</p>
         </ScrollAnimation>
         <ScrollAnimation animateIn="fadeInLeft" delay={0.4 * 1000}>
           <h3>Here are my main skills:</h3>

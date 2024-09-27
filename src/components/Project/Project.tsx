@@ -48,7 +48,7 @@ export function Project() {
             <div className="body">
               <h3>GetRoasted.lol</h3>
               <p>
-              It's a webapp that allows users to upload photos of themselves or friends, and an AI will roast the photo. It's a fun project that I built to learn more about web development and to have a bit of fun while travelling South-East-Asia for 6 months.
+              A webapp that allows users to upload photos of themselves or friends, and an AI will roast the photo. It's a fun project that I built while travelling South-East-Asia for 6 months.
               </p>
             </div>
             <footer>
@@ -63,15 +63,15 @@ export function Project() {
             <header>
               <svg width="50" xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="#23ce6b " stroke-width="1" stroke-linecap="round" stroke-linejoin="round" ><title>Folder</title><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
               <div className="project-links">
-                <a href="https://memorysquares.co.uk/" target="_blank" rel="noreferrer">
+                <a href="https://github.com/Lazysusan01/gmail-summarise-addon" target="_blank" rel="noreferrer">
                   <img src={externalLink} alt="Visit site" />
                 </a>
               </div>
             </header>
             <div className="body">
-              <h3>Memory Squares</h3>
+              <h3>Gmail Summariser</h3>
               <p>
-              Memory Squares is a website designed to allow users to generate digital memorial pages for loved ones, allowing uploads of videos, photos, music etc. to built a long term memory of the deceased. This project was built using React and Typescript.
+              A Gmail extension that lets a user request a summary of the past X days emails using AI to summarise the content.
               </p>
             </div>
             <footer>

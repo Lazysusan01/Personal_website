@@ -2,14 +2,17 @@ import { Container } from './styles'
 import { BrowserRouter as Router } from 'react-router-dom'
 import { NavHashLink, HashLink } from 'react-router-hash-link'
 import { useState } from 'react'
+
 export function Header() {
-  let html = document.getElementsByTagName('html')[0]
-  html.classList.toggle('light')
-  const [isActive, setActive] = useState(false)
+  const [isDarkMode, setIsDarkMode] = useState(true); // Default to dark mode
+  const [isActive, setActive] = useState(false);
+
   function toggleTheme() {
-    let html = document.getElementsByTagName('html')[0]
-    html.classList.toggle('light')
+    setIsDarkMode(!isDarkMode);
+    document.documentElement.classList.toggle('light');
   }
+
+
   function closeMenu() {
     setActive(false)
   }

@@ -42,6 +42,14 @@ export const Container = styled.section`
     letter-spacing: 0.1rem;
     font-weight: 500;
   }
+    .about-text{
+    font-size: 3rem;
+    font-weight: 300;
+    
+    
+    
+    
+    }
   
   
 
