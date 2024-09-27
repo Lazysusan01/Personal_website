@@ -1,16 +1,12 @@
 import styled from "styled-components";
 
 export const Container = styled.section`
-  padding-top: 5%;
+  padding-top: 10%;
   display: flex;
   justify-content: space-between;
   gap: 2rem;
   background: rgba(0,0,0,0);
   .hero-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 2rem;
     h1 {
       font-size: 6rem;
       font-weight: 700;
@@ -20,9 +16,10 @@ export const Container = styled.section`
       font-size: 3rem;
       font-weight: 500;
       color: #fff;
+      padding-bottom: 2rem;
     }
     p {
-      font-size: 2rem;
+      font-size: 3rem;
       font-weight: 300;
       color: #fff;
     }
@@ -43,9 +40,11 @@ export const Container = styled.section`
   }
 
   .button{
+
     margin-top: 5rem;
     padding: 1.4rem 6rem;
   }
+
 
   .hero-image{
     text-align: right;
