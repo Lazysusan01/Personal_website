@@ -28,7 +28,6 @@ export const GlobalStyle = createGlobalStyle`
         filter: invert(100%); /* Inverts white to black */
       }
     
-
       header.header-fixed{
         transition: 0.5s;
         background-color: #f5f5f550;
@@ -115,7 +114,6 @@ export const GlobalStyle = createGlobalStyle`
     filter: brightness(0.8);
     cursor: not-allowed;
   }
-
 
   .logo{
     font-size: 3rem;

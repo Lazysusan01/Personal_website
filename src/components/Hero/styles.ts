@@ -1,27 +1,30 @@
 import styled from "styled-components";
 
 export const Container = styled.section`
-  padding-top: 10%;
+  padding-top: 5%;
   display: flex;
   justify-content: space-between;
-  gap: 8rem;
+  gap: 2rem;
   background: rgba(0,0,0,0);
-  .hero-text{
-    & > p{
-      font-size: 1.8rem;
+  .hero-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    h1 {
+      font-size: 6rem;
+      font-weight: 700;
+      color: #fff;
     }
-    h1{
-      font-size: 7rem;
+    h3 {
+      font-size: 3rem;
+      font-weight: 500;
+      color: #fff;
     }
-
-    h3{
-      color:var(--green);
-      margin: 1rem 0;
-    }
-
-    
-    p.small-resume {
-      margin-bottom: 5rem;
+    p {
+      font-size: 2rem;
+      font-weight: 300;
+      color: #fff;
     }
   }
 // New added

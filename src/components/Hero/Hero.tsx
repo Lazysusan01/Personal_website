@@ -1,7 +1,7 @@
-import { BrowserRouter } from "react-router-dom"
+// import { BrowserRouter } from "react-router-dom"
 import { Container } from "./styles"
 import ScrollAnimation from "react-animate-on-scroll"
-import { NavHashLink } from "react-router-hash-link"
+// import { NavHashLink } from "react-router-hash-link"
 import linkedin from '../../assets/linkedin.svg'
 import githubIcon from '../../assets/github.svg'
 import whatsapp from '../../assets/whatsapp.svg'
@@ -21,10 +21,7 @@ export function Hero() {
           <PortfolioScene/>
         </ScrollAnimation>
         <ScrollAnimation animateIn="fadeInUp" delay={0.4 * 1000}>
-          <h3>Full Stack Developer</h3>
-        </ScrollAnimation>
-        <ScrollAnimation animateIn="fadeInUp" delay={0.6 * 1000}>
-          <p className="small-resume">AI and Automation Consultant</p>
+          <h3>Freelance Software Developer</h3>
         </ScrollAnimation>
         <ScrollAnimation animateIn="fadeInUp" delay={0.8 * 1000}>
           <a href={resume} download className="button">
@@ -57,7 +54,7 @@ export function Hero() {
         </ScrollAnimation>
       </div>
       <div className="hero-image">
-        <ScrollAnimation animateIn="fadeInRight" delay={1 * 1000}>
+        <ScrollAnimation animateIn="fadeInRight" delay={1 * 999}>
           <img src={nicomcgill} alt="Profile"/>
         </ScrollAnimation>
       </div>

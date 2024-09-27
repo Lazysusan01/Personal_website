@@ -1,6 +1,6 @@
-import React, { useRef, useEffect, useState, Suspense  } from 'react';
+import React, { useRef, useEffect, Suspense  } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls, useGLTF, Environment, useAnimations, Sky } from '@react-three/drei';
+import { OrbitControls, useGLTF, Environment, useAnimations } from '@react-three/drei';
 import newtextalembic from '../../assets/newtextalembic.gltf';
 // import { TextureLoader } from 'three/src/loaders/TextureLoader';
 import * as THREE from 'three';
@@ -25,7 +25,7 @@ const glowingPastelMaterial = new THREE.MeshPhysicalMaterial({
   reflectivity: 0.5,  
 });
 
-const AnimatedModel = ({ isPlaying }) => {
+const AnimatedModel = () => {
   const group = useRef();
   const { scene, animations } = useGLTF(newtextalembic);
   const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000,);
@@ -35,7 +35,7 @@ const AnimatedModel = ({ isPlaying }) => {
   // const axesHelper = new THREE.AxesHelper( 5 );
   // scene.add( axesHelper );
   
-  const { actions, names, mixer } = useAnimations(animations, group);
+  const { actions, names } = useAnimations(animations, group);
 
   useEffect(() => {
     if (names.length === 0) {
@@ -54,15 +54,11 @@ const AnimatedModel = ({ isPlaying }) => {
       child.castShadow = true;
       child.receiveShadow = true;
     });
+    const action = actions[names[0]]; // Play the first animation by default
+    action.play();
 
-    names.forEach((name) => {
-      const action = actions[name];
-      if (action) {
-        action.play();
-        action.paused = !isPlaying;
-      }
-    });
-  }, [actions, names, isPlaying, scene]);
+  }, [actions, names, scene]);
+  
 
   return (
     <group ref={group} dispose={null} scale={2} position={[-3.5 , -1, 1]}>
@@ -70,16 +66,6 @@ const AnimatedModel = ({ isPlaying }) => {
     </group>
   );
 };
-// const SkyboxWithBlur = () => {
-//   const texture = useThree(() => new TextureLoader().load('/src/assets/texture1.png'));
-
-//   return (
-//     <mesh >
-//       <sphereGeometry args={[100, 100, 100]} />
-//       <meshBasicMaterial map={texture} side={THREE.BackSide}/>
-//     </mesh>
-//   );
-// };
 
 
 const PortfolioScene = () => {
@@ -102,7 +88,6 @@ const PortfolioScene = () => {
     top: 0, 
     left: 0
   }}
-  // onClick={setIsPlaying(!isPlaying)}
 
 >
   <Canvas>
@@ -123,7 +108,7 @@ const PortfolioScene = () => {
   //       maxPolarAngle={Math.PI / 4}    // 90 degrees
       />
       <ambientLight intensity={0.5} />
-      <AnimatedModel isPlaying={isPlaying} />
+      <AnimatedModel/>
       {/* <Sky/> */}
       <Environment preset="sunset" />
     </Suspense>
