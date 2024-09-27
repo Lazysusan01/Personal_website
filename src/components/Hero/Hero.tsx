@@ -8,7 +8,7 @@ import whatsapp from '../../assets/whatsapp.svg'
 import Hello from '../../assets/Hello.gif'
 import nicomcgill from '../../assets/nicomcgill.jpg'
 import resume from '../../assets/Nico_mcgill_cv.pdf'
-import PortfolioScene from "./ThreeScene"
+import ThreeScene from "./ThreeScene"
 
 export function Hero() {
   return (
@@ -18,7 +18,7 @@ export function Hero() {
           <p>Hello <img src={Hello} alt="Hello" width="20px"/>, I'm</p>
         </ScrollAnimation>
         <ScrollAnimation animateIn="fadeInUp" delay={0.2 * 1000}>
-          <PortfolioScene/>
+          <ThreeScene/>
         </ScrollAnimation>
         <ScrollAnimation animateIn="fadeInUp" delay={0.4 * 1000}>
           <h3>Freelance Software Developer</h3>
