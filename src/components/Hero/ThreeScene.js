@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, Suspense  } from 'react';
+import React, { useRef, useEffect, Suspense, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, useGLTF, Environment, useAnimations } from '@react-three/drei';
 import newtextalembic from '../../assets/newtextalembic.gltf';
@@ -62,11 +62,22 @@ const AnimatedModel = () => {
 
   return (
     <group ref={group} dispose={null} scale={2} position={[-3.5 , -1, 1]}>
+
       <primitive object={scene} />
     </group>
   );
 };
 
+const Spinme = () => {
+  // Add a small white box to the top right of the scene that says Spin Me!
+  return (
+    <mesh position={[0, 0, 0]}>
+      <boxGeometry args={[10, 10, 10]} />
+      <meshStandardMaterial color="white" />
+      <textGeometry args={['Spin Me!', { font: 'Arial', size: 10, height: 10 }]} />
+    </mesh>
+  );
+};
 
 const PortfolioScene = () => {
   
@@ -76,6 +87,7 @@ const PortfolioScene = () => {
   // };
 
   return (
+
 <div 
   style={{ 
     width: '60vh', 
@@ -90,13 +102,16 @@ const PortfolioScene = () => {
   }}
 
 >
+  <Spinme />
   <Canvas>
     <Suspense fallback={null}>
       {/* <CameraSetup /> */}
       <OrbitControls
         enableDamping
         dampingFactor={0.25}
-        // rotateSpeed={0.5}
+        rotateSpeed={0.5}
+        autoRotate={true}
+        autoRotateSpeed={0.5} 
         // enablePan={false}
         // enableZoom={false}
         attach={'AnimatedModel'}
@@ -114,6 +129,11 @@ const PortfolioScene = () => {
     </Suspense>
   </Canvas>
 </div>
+
+
+
+
+
 );
 };
 export default PortfolioScene;

@@ -15,15 +15,15 @@ export function Project() {
             <header>
               <svg width="50" xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="#23ce6b " stroke-width="1" stroke-linecap="round" stroke-linejoin="round" ><title>Folder</title><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
               <div className="project-links">
-                <a href="https://github.com/Lazysusan01/usdot-phmsa-hazmat-parser" target="_blank" rel="noreferrer">
+                <a href="https://github.com/Lazysusan01/threeJS_Packaging_Module" target="_blank" rel="noreferrer">
                   <img src={externalLink} alt="Visit site" />
                 </a>
               </div>
             </header>
             <div className="body">
-              <h3>Transport regulation Lookup Tool</h3>
+              <h3>Hazard Label Visualisation Tool</h3>
               <p>
-              This webapp was built for my current employer, Chemwatch. Using open source tooling, I developed this using flask and TailwindCSS, designed to allow a user to navigate the Code of Federal Regulations on Transport of Hazardous Materials, Fascinating, I know...
+              This webapp was built for my current employer, Chemwatch. I developed this using Three.js and Blender, designed to allow a user shipping hazardous materials to see a 3D render of the container required, with all of the relevant hazard labels...
               </p>
             </div>
             <footer>
@@ -72,6 +72,32 @@ export function Project() {
               <h3>Gmail Summariser</h3>
               <p>
               A Gmail extension that lets a user request a summary of the past X days emails using AI to summarise the content.
+              </p>
+            </div>
+            <footer>
+              <ul className="tech-list">
+                <li>React</li>
+                <li>Typescript</li>
+                <li>Html</li>
+                <li>css</li>
+              </ul>
+            </footer>
+          </div>
+        </ScrollAnimation>
+        <ScrollAnimation animateIn="fadeInUp" delay={600}>
+          <div className="project">
+            <header>
+              <svg width="50" xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="#23ce6b " stroke-width="1" stroke-linecap="round" stroke-linejoin="round" ><title>Folder</title><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+              <div className="project-links">
+                <a href="https://github.com/Lazysusan01/gmail-summarise-addon" target="_blank" rel="noreferrer">
+                  <img src={externalLink} alt="Visit site" />
+                </a>
+              </div>
+            </header>
+            <div className="body">
+              <h3>Memory Squares</h3>
+              <p>
+              A service for hosting content of a user's choosing, with a Metal QR Code that can be scanned to access the Memory.
               </p>
             </div>
             <footer>
