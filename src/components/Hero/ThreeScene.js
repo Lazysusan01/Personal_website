@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, Suspense, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls, useGLTF, Environment, useAnimations } from '@react-three/drei';
+import { OrbitControls, useGLTF, Environment, useAnimations, Sky} from '@react-three/drei';
 import newtextalembic from '../../assets/newtextalembic.gltf';
 // import { TextureLoader } from 'three/src/loaders/TextureLoader';
 import * as THREE from 'three';
@@ -8,21 +8,35 @@ import * as THREE from 'three';
 const chromeMaterial = new THREE.MeshPhysicalMaterial({
   metalness: 0,
   roughness: 0.4,
-  color: 0xffffff,
+  color: 0x000000,
+  receiveShadow: true,
   envMapIntensity: 1,
-  clearcoat: 1,
+  clearcoat: 0.5,
   clearcoatRoughness: 0.1,
 });
 
+const cell_shade_material = new THREE.MeshToonMaterial({
+  color: 0x000000,
+  specular: 0x111111,
+  shininess: 0,
+  reflectivity: 0,
+
+});
+
 const glowingPastelMaterial = new THREE.MeshPhysicalMaterial({
-  color: new THREE.Color(0x222222),
-  emissive: new THREE.Color(0x222222),
-  emissiveIntensity: 2,
-  metalness: 0.5,
-  roughness: 0.5,
-  clearcoat: 0.8,
-  clearcoatRoughness: 0.2,
-  reflectivity: 0.5,  
+  thickness: 0.4,
+  reflectivity: 0.2,
+  // color: 0x000000,
+  // receiveShadow: false,
+  roughness: 0.01,
+  transmission: 1,
+  ior: 1.2,
+  dispersion: 0.9,
+  envMapIntensity: 1,
+  clearcoat: 0.5,
+  clearcoatRoughness: 0.1,
+  attenuationDistance: 0.1,
+  backside: true
 });
 
 const AnimatedModel = () => {
@@ -68,72 +82,61 @@ const AnimatedModel = () => {
   );
 };
 
-const Spinme = () => {
-  // Add a small white box to the top right of the scene that says Spin Me!
+const PortfolioScene = () => {
+  const [isClicked, setIsClicked] = useState(false);
+  
+  const handleInteraction = () => {
+    setIsClicked(true);
+  };
+
   return (
-    <mesh position={[0, 0, 0]}>
-      <boxGeometry args={[10, 10, 10]} />
-      <meshStandardMaterial color="white" />
-      <textGeometry args={['Spin Me!', { font: 'Arial', size: 10, height: 10 }]} />
-    </mesh>
+    <div 
+      style={{ 
+        width: '65vh', 
+        height: '40vh', 
+        display: 'block', 
+        overflow: 'hidden', 
+        margin: 0, 
+        padding: 0, 
+        position: 'relative', 
+        top: 0, 
+        left: 0
+      }}
+      onClick={handleInteraction}
+      onTouchStart={handleInteraction}
+    >
+      <Canvas>
+        <Suspense fallback={null}>
+          <OrbitControls
+            enableDamping
+            dampingFactor={0.25}
+            rotateSpeed={0.5}
+            autoRotate={true}
+            autoRotateSpeed={0.5}
+          />
+          <spotLight intensity={3} position={[0, 1, 3]} />
+          <ambientLight intensity={2} />  
+          <AnimatedModel />
+          {/* <Sky/> */}
+          <Environment preset="sunset" />
+        </Suspense>
+      </Canvas>
+      {!isClicked && (
+        <div style={{
+          position: 'absolute',
+          bottom: 20,
+          left: 20,
+          color: 'white',
+          backgroundColor: 'rgba(0,0,0,0.5)',
+          fontSize: '8px',
+          padding: '10px',
+          borderRadius: '5px'
+        }}>
+          Click and drag to rotate the model
+        </div>
+      )}
+    </div>
   );
 };
 
-const PortfolioScene = () => {
-  
-
-  // const handleMouseDown = () => {
-  //   setIsPlaying(!isPlaying);
-  // };
-
-  return (
-
-<div 
-  style={{ 
-    width: '60vh', 
-    height: '38vh', 
-    display: 'block', 
-    overflow: 'hidden', 
-    margin: 0, 
-    padding: 0, 
-    position: 'relative', 
-    top: 0, 
-    left: 0
-  }}
-
->
-  <Spinme />
-  <Canvas>
-    <Suspense fallback={null}>
-      {/* <CameraSetup /> */}
-      <OrbitControls
-        enableDamping
-        dampingFactor={0.25}
-        rotateSpeed={0.5}
-        autoRotate={true}
-        autoRotateSpeed={0.5} 
-        // enablePan={false}
-        // enableZoom={false}
-        attach={'AnimatedModel'}
-          // Limit horizontal rotation (azimuth)
-  //       minAzimuthAngle={-Math.PI / 2} // -45 degrees
-  //       maxAzimuthAngle={Math.PI / 4}  // 45 degrees
-  // // Limit vertical rotation (polar)
-  //       minPolarAngle={-Math.PI / 2}    // 60 degrees
-  //       maxPolarAngle={Math.PI / 4}    // 90 degrees
-      />
-      <ambientLight intensity={0.5} />
-      <AnimatedModel/>
-      {/* <Sky/> */}
-      <Environment preset="sunset" />
-    </Suspense>
-  </Canvas>
-</div>
-
-
-
-
-
-);
-};
 export default PortfolioScene;

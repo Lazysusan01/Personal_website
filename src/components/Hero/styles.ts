@@ -23,6 +23,24 @@ export const Container = styled.section`
       font-weight: 300;
       color: #fff;
     }
+w    &.light {
+        h1 {
+      font-size: 6rem;
+      font-weight: 700;
+      color: #000;
+    }
+    h3 {
+      font-size: 3rem;
+      font-weight: 500;
+      color: #000;
+      padding-bottom: 2rem;
+    }
+    p {
+      font-size: 3rem;
+      font-weight: 300;
+      color: #000;
+    }
+    }
   }
 // New added
   .social-media{
@@ -40,7 +58,6 @@ export const Container = styled.section`
   }
 
   .button{
-
     margin-top: 5rem;
     padding: 1.4rem 6rem;
   }

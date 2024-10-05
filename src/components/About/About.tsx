@@ -22,7 +22,7 @@ export function About() {
         </ScrollAnimation>
         <ScrollAnimation animateIn="fadeInLeft" delay={0.2 * 1000} style={{ marginTop: "2rem", marginBottom: "2rem" }}>
           <p>
-          I built Webapps for fun, and sometimes for money. Please contact me if you’d like me to build something for you, for money.
+          I build Webapps for fun, and sometimes for money. Please contact me if you’d like me to build something for you, for money.
           </p>
           <br /> 
         </ScrollAnimation>
