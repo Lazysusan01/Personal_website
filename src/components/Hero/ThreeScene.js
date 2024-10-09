@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, Suspense, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls, useGLTF, Environment, useAnimations, Sky} from '@react-three/drei';
+import { OrbitControls, useGLTF, Environment, useAnimations, PerspectiveCamera} from '@react-three/drei';
 import newtextalembic from '../../assets/newtextalembic.gltf';
 // import { TextureLoader } from 'three/src/loaders/TextureLoader';
 import * as THREE from 'three';
@@ -23,7 +23,7 @@ const cell_shade_material = new THREE.MeshToonMaterial({
 
 });
 
-const glowingPastelMaterial = new THREE.MeshPhysicalMaterial({
+const textMaterial = new THREE.MeshPhysicalMaterial({
   thickness: 0.4,
   reflectivity: 0.2,
   // color: 0x000000,
@@ -36,18 +36,13 @@ const glowingPastelMaterial = new THREE.MeshPhysicalMaterial({
   clearcoat: 0.5,
   clearcoatRoughness: 0.1,
   attenuationDistance: 0.1,
-  backside: true
+  backside: true,
+
 });
 
 const AnimatedModel = () => {
   const group = useRef();
   const { scene, animations } = useGLTF(newtextalembic);
-  const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000,);
-  camera.position.set(0, 2, 0 );
-  camera.lookAt(0, 0, 0);
-  scene.add( camera );
-  // const axesHelper = new THREE.AxesHelper( 5 );
-  // scene.add( axesHelper );
   
   const { actions, names } = useAnimations(animations, group);
 
@@ -57,26 +52,20 @@ const AnimatedModel = () => {
       return;
     }
     scene.traverse((child) => {
-      // console.log(child.name);
-      // Replace 'YourObjectName' with the actual name of the object you want to apply the material to
-      if (child.isMesh &&  (child.name.startsWith('1') || child.name.startsWith('2'))) {
+      if (child.isMesh && (child.name.startsWith('1') || child.name.startsWith('2'))) {
+        child.material = textMaterial;
+      } else {
         child.material = chromeMaterial;
-      }
-      else {
-        child.material = glowingPastelMaterial;
       }
       child.castShadow = true;
       child.receiveShadow = true;
     });
     const action = actions[names[0]]; // Play the first animation by default
     action.play();
-
   }, [actions, names, scene]);
-  
 
   return (
-    <group ref={group} dispose={null} scale={2} position={[-3.5 , -1, 1]}>
-
+    <group ref={group} dispose={null} scale={2} position={[-3.5, -1, 1]}>
       <primitive object={scene} />
     </group>
   );
@@ -106,6 +95,7 @@ const PortfolioScene = () => {
       onTouchStart={handleInteraction}
     >
       <Canvas>
+        <PerspectiveCamera makeDefault position={[0, 1, 15]} fov={20} />
         <Suspense fallback={null}>
           <OrbitControls
             enableDamping
@@ -117,7 +107,6 @@ const PortfolioScene = () => {
           <spotLight intensity={3} position={[0, 1, 3]} />
           <ambientLight intensity={2} />  
           <AnimatedModel />
-          {/* <Sky/> */}
           <Environment preset="sunset" />
         </Suspense>
       </Canvas>
