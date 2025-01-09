@@ -10,18 +10,18 @@ export const Container = styled.section`
     h1 {
       font-size: 6rem;
       font-weight: 700;
-      color: #fff;
+      color: inherit; 
     }
     h3 {
       font-size: 3rem;
       font-weight: 500;
-      color: #fff;
       padding-bottom: 2rem;
+      color: inherit; 
     }
     p {
       font-size: 3rem;
       font-weight: 300;
-      color: #fff;
+      color: inherit; 
     }
   }
 // New added
