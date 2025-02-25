@@ -14,57 +14,43 @@ import ScrollAnimation from "react-animate-on-scroll";
 import illustration from "../../assets/illustration.svg";
 
 export function About() {
+  // Define skills array for cleaner rendering
+  const skills = [
+    { src: wordpress, alt: "WordPress", delay: 0.10 },
+    { src: reactIcon, alt: "React", delay: 0.13 },
+    { src: typescriptIcon, alt: "TypeScript", delay: 0.14 },
+    { src: aws, alt: "AWS", delay: 0.15 },
+    { src: microsoft_azure, alt: "Microsoft Azure", delay: 0.15 },
+    { src: nodeIcon, alt: "Node.js", delay: 0.16 },
+    { src: jsIcon, alt: "JavaScript", delay: 0.19 },
+  ];
+
   return (
     <Container id="about">
       <div className="about-text">
         <ScrollAnimation animateIn="fadeInLeft">
           <h2>About me</h2>
         </ScrollAnimation>
-        <ScrollAnimation animateIn="fadeInLeft" delay={0.2 * 1000} style={{ marginTop: "2rem", marginBottom: "2rem" }}>
+        <ScrollAnimation 
+          animateIn="fadeInLeft" 
+          delay={0.2 * 1000} 
+          style={{ marginTop: "2rem", marginBottom: "2rem" }}
+        >
           <p>
-          I build Webapps for fun, and sometimes for money. Please contact me if you’d like me to build something for you, for money.
+            I build Webapps for fun, and sometimes for money. Please contact me if you'd like me to build something for you, for money.
           </p>
-          <br /> 
         </ScrollAnimation>
         <ScrollAnimation animateIn="fadeInLeft" delay={0.4 * 1000}>
           <h3>Here are my main skills:</h3>
         </ScrollAnimation>
         <div className="hard-skills">
-          <div className="hability">
-            <ScrollAnimation animateIn="fadeInUp" delay={0.10 * 1000}>
-              <img src={wordpress} alt="Wordpress" />
-            </ScrollAnimation>
-          </div>
-          <div className="hability">
-            <ScrollAnimation animateIn="fadeInUp" delay={0.13 * 1000}>
-              <img src={reactIcon} alt="React" />
-            </ScrollAnimation>
-          </div>
-          <div className="hability">
-            <ScrollAnimation animateIn="fadeInUp" delay={0.14 * 1000}>
-              <img src={typescriptIcon} alt="Typescript" />
-            </ScrollAnimation>
-          </div>
-          <div className="hability">
-            <ScrollAnimation animateIn="fadeInUp" delay={0.15 * 1000}>
-              <img src={aws} alt="Vue" />
-            </ScrollAnimation>
-          </div>
-          <div className="hability">
-            <ScrollAnimation animateIn="fadeInUp" delay={0.15 * 1000}>
-              <img src={microsoft_azure} alt="Vue" />
-            </ScrollAnimation>
-          </div>
-          <div className="hability">
-            <ScrollAnimation animateIn="fadeInUp" delay={0.16 * 1000}>
-              <img src={nodeIcon} alt="Node" />
-            </ScrollAnimation>
-          </div>
-          <div className="hability">
-            <ScrollAnimation animateIn="fadeInUp" delay={0.19 * 1000}>
-              <img src={jsIcon} alt="JavaScript" />
-            </ScrollAnimation>
-          </div>
+          {skills.map((skill, index) => (
+            <div className="hability" key={index}>
+              <ScrollAnimation animateIn="fadeInUp" delay={skill.delay * 1000}>
+                <img src={skill.src} alt={skill.alt} />
+              </ScrollAnimation>
+            </div>
+          ))}
         </div>
       </div>
       <div className="about-image">

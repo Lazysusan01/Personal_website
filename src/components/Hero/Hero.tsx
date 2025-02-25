@@ -29,32 +29,21 @@ export function Hero() {
           </a>
         </ScrollAnimation>  
         <ScrollAnimation animateIn="fadeInUp" delay={1 * 1000}>
-      <div className="social-media"><a
-        href="https://www.linkedin.com/in/nico-mcgill"
-        target="_blank"
-        rel="noreferrer"
-      >
-        <img src={linkedin} alt="Linkedin" />
-      </a>
-        <a
-          href="https://github.com/lazysusan01/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img src={githubIcon} alt="GitHub" />
-        </a>
-        <a
-          href="https://api.whatsapp.com/send/?phone=%2B919630576848&text=Hello+Nico"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img src={whatsapp} alt="Whatsapp" />
-        </a>
-        </div>
+          <div className="social-media">
+            {[
+              { href: "https://www.linkedin.com/in/nico-mcgill", img: linkedin, alt: "LinkedIn" },
+              { href: "https://github.com/lazysusan01/", img: githubIcon, alt: "GitHub" },
+              { href: "https://api.whatsapp.com/send/?phone=%2B919630576848&text=Hello+Nico", img: whatsapp, alt: "WhatsApp" }
+            ].map((social, index) => (
+              <a key={index} href={social.href} target="_blank" rel="noreferrer">
+                <img src={social.img} alt={social.alt} />
+              </a>
+            ))}
+          </div>
         </ScrollAnimation>
       </div>
       <div className="hero-image">
-        <ScrollAnimation animateIn="fadeInRight" delay={1 * 999}>
+        <ScrollAnimation animateIn="fadeInRight" delay={1 * 1000}>
           <img src={nicomcgill} alt="Profile"/>
         </ScrollAnimation>
       </div>
