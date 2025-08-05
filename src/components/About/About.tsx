@@ -1,15 +1,11 @@
 import { Container } from "./styles";
 import wordpress from "../../assets/wordpress.svg";
-import shopify from "../../assets/shopify.svg";
-import htmlIcon from "../../assets/html-icon.svg";
-import cssIcon from "../../assets/css-icon.svg";
 import jsIcon from "../../assets/js-icon.svg";
 import nodeIcon from "../../assets/node-icon.svg";
 import reactIcon from "../../assets/react-icon.svg";
 import typescriptIcon from "../../assets/typescript-icon.svg";
 import microsoft_azure from "../../assets/Microsoft_Azure.svg";
 import aws from "../../assets/Amazon_Web_Services_Logo.svg";
-import boostrapIcon from "../../assets/bootstrap-icon.svg";
 import ScrollAnimation from "react-animate-on-scroll";
 import illustration from "../../assets/illustration.svg";
 
@@ -39,9 +35,6 @@ export function About() {
           <p>
             I build Webapps for fun, and sometimes for money. Please contact me if you'd like me to build something for you, for money.
           </p>
-        </ScrollAnimation>
-        <ScrollAnimation animateIn="fadeInLeft" delay={0.4 * 1000}>
-          <h3>Here are my main skills:</h3>
         </ScrollAnimation>
         <div className="hard-skills">
           {skills.map((skill, index) => (

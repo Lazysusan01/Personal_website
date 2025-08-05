@@ -3,10 +3,14 @@ import styled from "styled-components";
 export const Container = styled.section`
   padding-top: 10%;
   display: flex;
-  justify-content: space-between;
-  gap: 2rem;
+  justify-content: center;
+  align-items: center;
   background: rgba(0,0,0,0);
-  .hero-text {
+  
+  .hero-content {
+    text-align: center;
+    max-width: 800px;
+    
     h1 {
       font-size: 6rem;
       font-weight: 700;
@@ -24,14 +28,26 @@ export const Container = styled.section`
       color: inherit; 
     }
   }
-// New added
-  .social-media{
-    display: inline-flex;
+
+  .button{
+    margin-top: 5rem;
+    padding: 1.4rem 6rem;
+  }
+
+  .profile-section {
+    display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+  }
+
+  .social-media{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     gap: 1rem;
-    padding-top:5rem;
-    padding-left:1rem;
 
     img,span{
       font-size: 3rem;
@@ -39,18 +55,12 @@ export const Container = styled.section`
     }
   }
 
-  .button{
-    margin-top: 5rem;
-    padding: 1.4rem 6rem;
-  }
-
-
   .hero-image{
-    text-align: right;
    img{
-     margin-top: 2rem;
-     width: 50%;
-     border-radius: 50rem;
+     width: 120px;
+     height: 120px;
+     border-radius: 50%;
+     object-fit: cover;
      transition: filter 0.5s;
      &:hover{
        filter: grayscale(0);
@@ -81,23 +91,54 @@ export const Container = styled.section`
   }
 
   @media(max-width: 1080px){
-    display: block;
     margin-top: 15%;
-    .hero-text{
+    .hero-content{
       h1{
         font-size: 5rem;
       }
     }
+  }
+
+  @media(max-width: 768px){
+    .profile-section {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
     
-    .hero-image{
-      display: none;
+    .hero-image img {
+      width: 100px;
+      height: 100px;
     }
   }
 
   @media(max-width: 600px){
     margin-top: 35%;
+    
+    .hero-content {
+      h3 {
+        font-size: 2.5rem;
+      }
+      p {
+        font-size: 2.5rem;
+      }
+    }
   }
+  
   @media(max-width: 480px){
     margin-top: 45%;
+    
+    .hero-content {
+      h3 {
+        font-size: 2rem;
+      }
+      p {
+        font-size: 2rem;
+      }
+    }
+    
+    .hero-image img {
+      width: 80px;
+      height: 80px;
+    }
   }
 `

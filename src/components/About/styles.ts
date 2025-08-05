@@ -2,8 +2,13 @@ import styled from "styled-components";
 
 export const Container = styled.section`
   margin-top: 3rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
   gap: 2rem;
 
   .hard-skills{
@@ -12,7 +17,9 @@ export const Container = styled.section`
     align-items: center;
     flex-wrap: wrap;
     gap: 1.8rem;
+    justify-content: center;
   }
+  
   .hability{
     display: flex;
     flex-direction: column;
@@ -26,8 +33,7 @@ export const Container = styled.section`
   h2{
     display: inline-block;
     margin-bottom: 2rem;
-    // border-bottom: 0.2rem solid var(--blue);
-    font-size :3rem;
+    font-size: 3rem;
     margin-top: 0rem;
     color: var(--green);
   }
@@ -42,66 +48,47 @@ export const Container = styled.section`
     letter-spacing: 0.1rem;
     font-weight: 500;
   }
-    .about-text{
+  
+  .about-text{
     font-size: 3rem;
     font-weight: 300;
-    
-    
-    
-    
-    }
-  
-  
+  }
 
   .about-image{
     text-align: center;
-   img{
-     margin-top: 2rem;
-     width: 70%;
-     filter: grayscale(0);
-     transition: filter 0.5s;
-     &:hover{
-       filter: grayscale(0);
-     }
-   }
-  }
-
-  @media only screen and (max-width: 480px) {
-    .about-image {
-      max-width: 100%;
-      margin-top: 4rem;
-      img{
-        margin-top: 2rem;
-        width: 100%;
+    img{
+      margin-top: 2rem;
+      width: 70%;
+      filter: grayscale(0);
+      transition: filter 0.5s;
+      &:hover{
         filter: grayscale(0);
-        transition: filter 0.5s;
-        &:hover{
-          filter: grayscale(0);
-        }
+      }
     }
   }
 
-  @media (max-width: 960px){
-    display: block;
-    text-align: center;
+  @media (max-width: 768px){
+    max-width: 90%;
     
-    .hard-skills{
-      justify-content: center;
+    .about-image img{
+      width: 80%;
     }
-    .about-image{
-      display: flex;
-      max-width: 100%;
-      img{
-        margin-top: 2rem;
-        width: 100%;
-        filter: grayscale(0);
-        transition: filter 0.5s;
-        &:hover{
-          filter: grayscale(0);
-        }
+  }
+
+  @media (max-width: 480px) {
+    max-width: 95%;
+    
+    .about-image img{
+      width: 90%;
     }
     
+    h2{
+      font-size: 2.5rem;
+    }
     
+    p{
+      font-size: 1.6rem;
+    }
   }
 
 `
