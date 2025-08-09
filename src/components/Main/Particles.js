@@ -1,205 +1,216 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback, useMemo } from 'react';
 
 export function Particles() {
   const [theme, setTheme] = useState('dark');
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const [gridDimensions, setGridDimensions] = useState({ cols: 0, rows: 0 });
 
-  // Function to create particles config based on theme
-  const getParticlesConfig = (currentTheme) => {
-    const isDark = currentTheme !== 'light';
-    
-    return {
-      "particles": {
-        "number": {
-          "value": 80,
-          "density": {
-            "enable": true,
-            "value_area": 800
-          }
-        },
-        "color": {
-          // White particles for dark theme, dark grey for light theme
-          "value": isDark ? "#ffffff" : "#212121"
-        },
-        "shape": {
-          "type": "circle",
-          "stroke": {
-            "width": 0,
-            "color": isDark ? "#000000" : "#f5f5f5"
-          },
-          "polygon": {
-            "nb_sides": 5
-          },
-          "image": {
-            "src": "img/github.svg",
-            "width": 100,
-            "height": 100
-          }
-        },
-        "opacity": {
-          "value": 0.5,
-          "random": false,
-          "anim": {
-            "enable": false,
-            "speed": 1,
-            "opacity_min": 0.1,
-            "sync": false
-          }
-        },
-        "size": {
-          "value": 3,
-          "random": true,
-          "anim": {
-            "enable": false,
-            "speed": 40,
-            "size_min": 0.1,
-            "sync": false
-          }
-        },
-        "line_linked": {
-          "enable": true,
-          "distance": 150,
-          // White lines for dark theme, dark grey for light theme
-          "color": isDark ? "#ffffff" : "#212121",
-          "opacity": 0.4,
-          "width": 1
-        },
-        "move": {
-          "enable": true,
-          "speed": 4,
-          "direction": "none",
-          "random": false,
-          "straight": false,
-          "out_mode": "out",
-          "bounce": false,
-          "attract": {
-            "enable": false,
-            "rotateX": 600,
-            "rotateY": 1200
-          }
-        }
-      },
-      "interactivity": {
-        "detect_on": "window",
-        "events": {
-          "onhover": {
-            "enable": false,
-            "mode": "repulse"
-          },
-          "onclick": {
-            "enable": true,
-            "mode": "push"
-          },
-          "resize": true
-        },
-        "modes": {
-          "grab": {
-            "distance": 400,
-            "line_linked": {
-              "opacity": 1
-            }
-          },
-          "bubble": {
-            "distance": 400,
-            "size": 40,
-            "duration": 2,
-            "opacity": 8,
-            "speed": 3
-          },
-          "repulse": {
-            "distance": 200,
-            "duration": 0.4
-          },
-          "push": {
-            "particles_nb": 4
-          },
-          "remove": {
-            "particles_nb": 2
-          }
-        }
-      },
-      "retina_detect": true
-    };
-  };
+  // Developer content arrays
+  const developerContent = useMemo(() => ({
+    code: ['const', 'function', '=>', '{}', '[]', 'async', 'await', 'return', 'import', 'export'],
+    files: ['.tsx', '.js', '.css', '.json', '.md', '.yml', '.env', '.git', '.npm', '.svg'],
+    tools: ['react', 'node', 'git', 'npm', 'vscode', 'webpack', 'babel', 'jest', 'docker', 'aws'],
+    commands: ['ctrl+s', 'cmd+c', 'ctrl+z', 'cmd+v', 'ctrl+f', 'alt+tab', 'f12', 'ctrl+`', 'cmd+shift+p', 'ctrl+d']
+  }), []);
 
+  // Theme detection
   useEffect(() => {
-    // Only run in browser environment
     if (typeof window !== 'undefined' && typeof document !== 'undefined') {
-      // Check initial theme
       const rootElement = document.documentElement;
       const initialTheme = rootElement.classList.contains('light') ? 'light' : 'dark';
       setTheme(initialTheme);
 
-      // Create and load particles.js script
-      const script = document.createElement('script');
-      script.src = 'https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js';
-      script.async = true;
-      document.body.appendChild(script);
-
-      // Function to initialize or reinitialize particles
-      const initParticles = (currentTheme) => {
-        if (window.particlesJS) {
-          const particlesElement = document.getElementById('particles-js');
-          if (particlesElement) {
-            // Get config based on current theme
-            const config = getParticlesConfig(currentTheme);
-            
-            // Clear existing particles if any
-            if (window.pJSDom && window.pJSDom.length > 0) {
-              window.pJSDom[0].pJS.fn.vendors.destroypJS();
-              window.pJSDom = [];
-            }
-            
-            // Initialize with new config
-            window.particlesJS('particles-js', config);
-          }
-        }
-      };
-
-      // Initialize particles when script is loaded
-      script.onload = () => {
-        initParticles(initialTheme);
-      };
-
-      // Set up a mutation observer to watch for theme changes
       const observer = new MutationObserver((mutations) => {
         mutations.forEach((mutation) => {
           if (mutation.attributeName === 'class') {
             const newTheme = rootElement.classList.contains('light') ? 'light' : 'dark';
             if (newTheme !== theme) {
               setTheme(newTheme);
-              initParticles(newTheme);
             }
           }
         });
       });
 
       observer.observe(rootElement, { attributes: true });
-
-      // Cleanup function
-      return () => {
-        if (script.parentNode) {
-          document.body.removeChild(script);
-        }
-        observer.disconnect();
-        if (window.pJSDom && window.pJSDom.length > 0) {
-          window.pJSDom[0].pJS.fn.vendors.destroypJS();
-        }
-      };
+      return () => observer.disconnect();
     }
   }, [theme]);
 
+  // Grid dimensions calculation
+  useEffect(() => {
+    const calculateGrid = () => {
+      const cellSize = 40; // Base cell size in pixels
+      const cols = Math.floor(window.innerWidth / cellSize);
+      const rows = Math.floor(window.innerHeight / cellSize);
+      setGridDimensions({ cols, rows });
+    };
+
+    calculateGrid();
+    window.addEventListener('resize', calculateGrid);
+    return () => window.removeEventListener('resize', calculateGrid);
+  }, []);
+
+  // Throttled mouse move handler
+  const handleMouseMove = useCallback((e) => {
+    setMousePos({ x: e.clientX, y: e.clientY });
+  }, []);
+
+  useEffect(() => {
+    let timeoutId;
+    const throttledMouseMove = (e) => {
+      if (timeoutId) return;
+      timeoutId = setTimeout(() => {
+        handleMouseMove(e);
+        timeoutId = null;
+      }, 16); // ~60fps
+    };
+
+    window.addEventListener('mousemove', throttledMouseMove);
+    return () => {
+      window.removeEventListener('mousemove', throttledMouseMove);
+      if (timeoutId) clearTimeout(timeoutId);
+    };
+  }, [handleMouseMove]);
+
+  // Generate grid cells
+  const gridCells = useMemo(() => {
+    const cells = [];
+    const cellSize = 40;
+    const activationRadius = 120;
+
+    for (let row = 0; row < gridDimensions.rows; row++) {
+      for (let col = 0; col < gridDimensions.cols; col++) {
+        const x = col * cellSize + cellSize / 2;
+        const y = row * cellSize + cellSize / 2;
+        
+        // Calculate distance from mouse
+        const distance = Math.sqrt(
+          Math.pow(mousePos.x - x, 2) + Math.pow(mousePos.y - y, 2)
+        );
+        
+        const isActive = distance < activationRadius;
+        const intensity = isActive ? Math.max(0, 1 - distance / activationRadius) : 0;
+        
+        // Select random content if active
+        let content = '';
+        if (isActive && intensity > 0.3) {
+          const contentTypes = Object.keys(developerContent);
+          const randomType = contentTypes[Math.floor(Math.random() * contentTypes.length)];
+          const randomContent = developerContent[randomType];
+          content = randomContent[Math.floor(Math.random() * randomContent.length)];
+        }
+
+        cells.push({
+          id: `${row}-${col}`,
+          x,
+          y,
+          isActive,
+          intensity,
+          content,
+          row,
+          col
+        });
+      }
+    }
+    return cells;
+  }, [gridDimensions, mousePos, developerContent]);
+
+  const isDark = theme !== 'light';
+
   return (
-    <div 
-      id="particles-js" 
+    <div
       style={{
         position: 'fixed',
         top: 0,
         left: 0,
         width: '100%',
         height: '100%',
-        zIndex: -1, // This ensures it stays behind other content
-        pointerEvents: 'auto' // This allows interaction with the particles
+        zIndex: -1,
+        pointerEvents: 'none',
+        background: isDark 
+          ? 'linear-gradient(45deg, rgba(0,20,40,0.1) 0%, rgba(0,10,30,0.1) 100%)'
+          : 'linear-gradient(45deg, rgba(240,248,255,0.1) 0%, rgba(230,240,250,0.1) 100%)',
+        backgroundImage: isDark
+          ? `linear-gradient(${isDark ? 'rgba(0,150,200,0.1)' : 'rgba(0,50,100,0.1)'} 1px, transparent 1px),
+             linear-gradient(90deg, ${isDark ? 'rgba(0,150,200,0.1)' : 'rgba(0,50,100,0.1)'} 1px, transparent 1px)`
+          : `linear-gradient(rgba(0,50,100,0.1) 1px, transparent 1px),
+             linear-gradient(90deg, rgba(0,50,100,0.1) 1px, transparent 1px)`,
+        backgroundSize: '40px 40px'
       }}
-    ></div>
+    >
+      {gridCells.map((cell) => (
+        <div
+          key={cell.id}
+          style={{
+            position: 'absolute',
+            left: cell.x - 20,
+            top: cell.y - 20,
+            width: '40px',
+            height: '40px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            fontSize: '10px',
+            fontFamily: 'monospace',
+            fontWeight: 'bold',
+            color: isDark ? '#00d4ff' : '#0066cc',
+            backgroundColor: cell.isActive 
+              ? isDark 
+                ? `rgba(0, 212, 255, ${cell.intensity * 0.1})`
+                : `rgba(0, 102, 204, ${cell.intensity * 0.1})`
+              : 'transparent',
+            border: cell.isActive 
+              ? `1px solid ${isDark ? 'rgba(0, 212, 255, ' + cell.intensity * 0.3 + ')' : 'rgba(0, 102, 204, ' + cell.intensity * 0.3 + ')'}`
+              : 'none',
+            borderRadius: '2px',
+            transition: 'all 0.2s ease-out',
+            opacity: cell.isActive ? cell.intensity : 0,
+            transform: cell.isActive ? `scale(${1 + cell.intensity * 0.1})` : 'scale(1)',
+            boxShadow: cell.isActive && cell.intensity > 0.5
+              ? `0 0 10px ${isDark ? 'rgba(0, 212, 255, ' + cell.intensity * 0.3 + ')' : 'rgba(0, 102, 204, ' + cell.intensity * 0.3 + ')'}`
+              : 'none',
+            textShadow: cell.isActive && cell.intensity > 0.3
+              ? `0 0 5px ${isDark ? 'rgba(0, 212, 255, 0.8)' : 'rgba(0, 102, 204, 0.8)'}`
+              : 'none'
+          }}
+        >
+          {cell.content}
+        </div>
+      ))}
+      
+      {/* Blueprint-style corner annotations */}
+      <div
+        style={{
+          position: 'absolute',
+          bottom: '20px',
+          right: '20px',
+          fontSize: '10px',
+          fontFamily: 'monospace',
+          color: isDark ? 'rgba(0, 212, 255, 0.4)' : 'rgba(0, 102, 204, 0.4)',
+          textAlign: 'right',
+          lineHeight: '1.2'
+        }}
+      >
+        GRID: {gridDimensions.cols}×{gridDimensions.rows}<br/>
+        INTERACTIVE BLUEPRINT v2.1<br/>
+        DEVELOPER PORTFOLIO
+      </div>
+      
+      <div
+        style={{
+          position: 'absolute',
+          top: '20px',
+          left: '20px',
+          fontSize: '10px',
+          fontFamily: 'monospace',
+          color: isDark ? 'rgba(0, 212, 255, 0.4)' : 'rgba(0, 102, 204, 0.4)',
+          lineHeight: '1.2'
+        }}
+      >
+        THEME: {theme.toUpperCase()}<br/>
+        STATUS: ACTIVE<br/>
+        MOUSE: [{Math.round(mousePos.x)}, {Math.round(mousePos.y)}]
+      </div>
+    </div>
   );
 }
