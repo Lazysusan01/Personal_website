@@ -50,27 +50,51 @@ export function Particles() {
     return () => window.removeEventListener('resize', calculateGrid);
   }, []);
 
-  // Throttled mouse move handler
-  const handleMouseMove = useCallback((e) => {
-    setMousePos({ x: e.clientX, y: e.clientY });
+  // Throttled mouse and touch move handler
+  const handlePointerMove = useCallback((x, y) => {
+    setMousePos({ x, y });
   }, []);
 
   useEffect(() => {
     let timeoutId;
-    const throttledMouseMove = (e) => {
+    
+    const throttledMove = (x, y) => {
       if (timeoutId) return;
       timeoutId = setTimeout(() => {
-        handleMouseMove(e);
+        handlePointerMove(x, y);
         timeoutId = null;
       }, 16); // ~60fps
     };
 
-    window.addEventListener('mousemove', throttledMouseMove);
+    const handleMouseMove = (e) => {
+      throttledMove(e.clientX, e.clientY);
+    };
+
+    const handleTouchMove = (e) => {
+      e.preventDefault(); // Prevent scrolling while dragging
+      if (e.touches.length > 0) {
+        throttledMove(e.touches[0].clientX, e.touches[0].clientY);
+      }
+    };
+
+    const handleTouchStart = (e) => {
+      if (e.touches.length > 0) {
+        throttledMove(e.touches[0].clientX, e.touches[0].clientY);
+      }
+    };
+
+    // Add event listeners
+    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('touchmove', handleTouchMove, { passive: false });
+    window.addEventListener('touchstart', handleTouchStart);
+
     return () => {
-      window.removeEventListener('mousemove', throttledMouseMove);
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('touchmove', handleTouchMove);
+      window.removeEventListener('touchstart', handleTouchStart);
       if (timeoutId) clearTimeout(timeoutId);
     };
-  }, [handleMouseMove]);
+  }, [handlePointerMove]);
 
   // Generate grid cells
   const gridCells = useMemo(() => {
