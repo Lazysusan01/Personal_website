@@ -71,7 +71,7 @@ export function Particles() {
     };
 
     const handleTouchMove = (e) => {
-      e.preventDefault(); // Prevent scrolling while dragging
+      // Allow scrolling while still tracking touch for particle effects
       if (e.touches.length > 0) {
         throttledMove(e.touches[0].clientX, e.touches[0].clientY);
       }
@@ -85,7 +85,7 @@ export function Particles() {
 
     // Add event listeners
     window.addEventListener('mousemove', handleMouseMove);
-    window.addEventListener('touchmove', handleTouchMove, { passive: false });
+    window.addEventListener('touchmove', handleTouchMove, { passive: true });
     window.addEventListener('touchstart', handleTouchStart);
 
     return () => {
