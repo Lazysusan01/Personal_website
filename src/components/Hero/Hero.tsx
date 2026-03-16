@@ -3,6 +3,18 @@ import linkedin from '../../assets/linkedin.svg'
 import githubIcon from '../../assets/github.svg'
 import resume from '../../assets/Nico_mcgill_cv.pdf'
 
+function SplitLetters({ text, className }: { text: string; className: string }) {
+  return (
+    <span className={className}>
+      {text.split('').map((char, i) => (
+        <span key={i} className="letter" style={{ animationDelay: `${i * 15}ms` }}>
+          {char}
+        </span>
+      ))}
+    </span>
+  )
+}
+
 export function Hero() {
   return (
     <Container id="home">
@@ -10,9 +22,9 @@ export function Hero() {
         <p className="greeting">Hi, I'm</p>
 
         <h1>
-          <span className="name-a">Nico</span>
+          <SplitLetters text="Nico" className="name-a" />
           {' '}
-          <span className="name-b">McGill</span>
+          <SplitLetters text="McGill" className="name-b" />
         </h1>
 
         <h2 className="title">

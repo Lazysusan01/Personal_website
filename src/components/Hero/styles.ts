@@ -55,6 +55,21 @@ export const Container = styled.section`
       color: var(--green);
       animation: slideFromRight 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
     }
+
+    .letter {
+      display: inline-block;
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                  color 0.35s ease;
+
+      &:hover {
+        transform: translateY(-8px);
+        color: var(--green);
+      }
+    }
+
+    .name-b .letter:hover {
+      color: var(--text);
+    }
   }
 
   .title {
