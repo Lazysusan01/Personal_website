@@ -1,60 +1,42 @@
-import { Container } from './styles'
-import { BrowserRouter as Router } from 'react-router-dom'
-import { NavHashLink, HashLink } from 'react-router-hash-link'
 import { useState } from 'react'
+import { Container } from './styles'
+import resume from '../../assets/Nico_mcgill_cv.pdf'
 
 export function Header() {
-  const [isDarkMode, setIsDarkMode] = useState(true); // Default to dark mode
-  const [isActive, setActive] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
 
-  function toggleTheme() {
-    setIsDarkMode(!isDarkMode);
-    document.documentElement.classList.toggle('light');
-  }
+  const links = [
+    { href: '#experience', label: 'Experience' },
+    { href: '#projects', label: 'Projects' },
+    { href: '#contact', label: 'Contact' },
+  ]
 
-
-  function closeMenu() {
-    setActive(false)
-  }
   return (
-    <Container className="header-fixed">
-      <Router>
-        <HashLink smooth to="#home" className="logo">
-          <span>{"<Nico "}</span>
-          <span>{" McGill/>"}</span>
-        </HashLink>
-        <input
-          onChange={toggleTheme}
-          className="container_toggle"
-          type="checkbox"
-          id="switch"
-          name="mode"
-        />
-        <label htmlFor="switch">Toggle</label>
-        <nav className={isActive ? 'active' : ''}>
-          <NavHashLink smooth to="#home" onClick={closeMenu}>
-            Home
-          </NavHashLink>
-          <NavHashLink smooth to="#about" onClick={closeMenu}>
-            About me
-          </NavHashLink>
-          <NavHashLink smooth to="#project" onClick={closeMenu}>
-            Projects
-          </NavHashLink>
-          <NavHashLink smooth to="#contact" onClick={closeMenu}>
-            Contact
-          </NavHashLink>
-        </nav>
-        <div
-          aria-expanded={isActive ? 'true' : 'false'}
-          aria-haspopup="true"
-          aria-label={isActive ? 'Fechar menu' : 'Abrir menu'}
-          className={isActive ? 'menu active' : 'menu'}
-          onClick={() => {
-            setActive(!isActive)
-          }}
-        ></div>
-      </Router>
+    <Container>
+      <a href="#home" className="logo">
+        nico<span>.</span>
+      </a>
+
+      <nav className={isOpen ? 'open' : ''}>
+        {links.map(link => (
+          <a key={link.href} href={link.href} onClick={() => setIsOpen(false)}>
+            {link.label}
+          </a>
+        ))}
+        <a href={resume} download className="cv-link">
+          CV ↓
+        </a>
+      </nav>
+
+      <button
+        className={`hamburger ${isOpen ? 'open' : ''}`}
+        onClick={() => setIsOpen(!isOpen)}
+        aria-label="Toggle menu"
+      >
+        <span />
+        <span />
+        <span />
+      </button>
     </Container>
   )
 }

@@ -1,75 +1,81 @@
 import styled from "styled-components";
 
-
 export const Container = styled.section`
-  margin-top: 10rem;
+  padding: 4rem 4rem 12rem;
+  display: flex;
+  justify-content: center;
 
-  header{
+  .inner {
     text-align: center;
-    h2{
-      text-align: center;
-      font-size: 4rem;
+    max-width: 54rem;
+  }
+
+  h2 {
+    font-size: clamp(3.2rem, 5vw, 5rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.6rem;
+  }
+
+  p {
+    font-size: 1.7rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+    margin-bottom: 3.6rem;
+  }
+
+  .email-link {
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--green);
+    letter-spacing: -0.01em;
+    margin-bottom: 4rem;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -0.3rem;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--green);
+      transition: width 0.3s ease;
     }
-    p{
-      color: var(--green);
-      font-weight: 500;
+
+    &:hover::after {
+      width: 100%;
     }
   }
 
-  .contacts{
+  .socials {
     display: flex;
-    align-items: center;
     justify-content: center;
-    gap: 2rem;
-    place-items: center;
-    margin-top: 1.5rem;
-    div{
+    gap: 2.4rem;
+
+    a {
       display: flex;
       align-items: center;
-      justify-content: center;
-      width: 50%;
-      max-width: 30rem;
-      gap: 2rem;
-      background-color: var(--green);
-      border-radius: 1.4rem;
-      padding: 1.6rem 2.8rem;
-      transition: background-color 0.25s;
-      img{
-        width: 4rem;
+      gap: 0.8rem;
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      transition: color 0.2s;
+
+      &:hover {
+        color: var(--text);
       }
-      a{
-        color: var(--black);
-        font-weight: 500;
+
+      img {
+        width: 17px;
+        filter: invert(0.5);
+        transition: filter 0.2s;
       }
-      &:hover{
-        background-color: var(--pink);
-        a{
-          color: #FFF;
-        }
+
+      &:hover img {
+        filter: invert(1);
       }
     }
   }
-
-
-  @media(max-width: 960px){
-    .contacts{
-      flex-direction: column;
-      div{
-        width: 100%;
-        
-      }
-    }
-  }
-  
-`
-/* old one - 2/1/2023 - 
-@media(max-width: 960px){
-    .contacts{
-      flex-direction: column;
-      div{
-        width: 100%;
-        flex-direction: column;
-      }
-    }
-
-*/
+`;
