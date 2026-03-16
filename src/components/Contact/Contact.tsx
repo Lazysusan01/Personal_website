@@ -1,21 +1,39 @@
-import { Container } from "./styles";
-import emailIcon from "../../assets/email-icon.svg";
-// import { Form } from "../Form/Form";
+import { useReveal } from '../../hooks/useReveal'
+import { Container } from './styles'
+import linkedin from '../../assets/linkedin.svg'
+import githubIcon from '../../assets/github.svg'
 
+export function Contact() {
+  const ref = useReveal()
 
-export function Contact(){
-
-  return(
+  return (
     <Container id="contact">
-      <header>
-        <h2>Contact</h2>
-        <p>Ready to get started on your project?</p>
-        <p>Contact me now for a Free consultation.</p>
-      </header>
-      <div className="contacts">
-        <div>
-        <a href="mailto:nicomcgill@gmail.com"><img src={emailIcon} alt="Email" /></a> 
-          <a href="mailto:nicomcgill@gmail.com">nicomcgill@gmail.com</a>
+      <div ref={ref} className="inner reveal">
+        <h2>Get in touch</h2>
+        <p>
+          Open to interesting projects, new roles, or just a conversation.
+          Drop me a line.
+        </p>
+        <a href="mailto:nicomcgill@gmail.com" className="email-link">
+          nicomcgill@gmail.com
+        </a>
+        <div className="socials">
+          <a
+            href="https://www.linkedin.com/in/nico-mcgill"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src={linkedin} alt="LinkedIn" />
+            LinkedIn
+          </a>
+          <a
+            href="https://github.com/Lazysusan01"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src={githubIcon} alt="GitHub" />
+            GitHub
+          </a>
         </div>
       </div>
     </Container>
